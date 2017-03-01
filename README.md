@@ -22,7 +22,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - In your *Podfile* write the following
 
   ```
-  pod 'MasterpassQRCoreSDK', :podspec => 'http://ec2-54-179-136-197.ap-southeast-1.compute.amazonaws.com:8080/qrscan-tester/ios/sdk/coresdk/latest/MasterpassQRSDK.podspec'
+  pod 'MasterpassQRCoreSDK'
   ```
 
 - Do `pod install`
@@ -44,8 +44,8 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - Follow same instructions as Swift
 - Go to your Xcode project's **Build Settings** and set **Always Embed Swift Standard Libraries** to **YES**
 
-[1]: http://ec2-54-179-136-197.ap-southeast-1.compute.amazonaws.com:8080/qrscan-tester/ios/sdk/scansdk/latest/docs
-[2]: http://ec2-54-179-136-197.ap-southeast-1.compute.amazonaws.com:8080/qrscan-tester/ios/sdk/coresdk/latest/masterpassqrsdk-framework-ios.zip
+[1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
+[2]: https://github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.0/masterpassqrcoresdk-framework-ios.zip
 
 ### Usage
 
@@ -54,6 +54,8 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 __Swift__
 
 ```swift
+import MasterpassQRCoreSDK
+
 func parseQRCode(code: String) {
   do {
       // Parse qr code
@@ -81,6 +83,8 @@ func parseQRCode(code: String) {
 __Objective-C__
 
 ```objc
+@import MasterpassQRCoreSDK;
+
 - (void)parseQRCode:(NSString *)code {
   NSString* (^handleError)(NSError *) = ^NSString* (NSError* error) {
       if (error.domain == MPQRErrorDomain) {
