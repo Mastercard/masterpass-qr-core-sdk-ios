@@ -1,4 +1,4 @@
-# Masterpass QR SDK
+# Masterpass QR Core SDK
 
 This SDK provides parser for parsing Push Payment QR code.
 
