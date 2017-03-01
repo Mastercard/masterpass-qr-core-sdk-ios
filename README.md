@@ -30,7 +30,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 
 #### Manual
 ##### Swift
-- Download the latest release of [Masterpass QR SDK][2].
+- Download the latest release of [Masterpass QR Core SDK][2].
 - Unzip the file.
 - Go to your Xcode project’s “General” settings. Drag MasterpassQRCoreSDK.framework to the “Embedded Binaries” section. Make sure to select **Copy items if needed** and click Finish.
 - Create a new **Run Script Phase** in your app’s target’s **Build Phases** and paste the following snippet in the script text field:
