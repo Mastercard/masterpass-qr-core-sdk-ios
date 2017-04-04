@@ -9,8 +9,8 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 *This SDK is developed in Swift and it works with Objective-C but it is recommended to use Swift for development with this SDK.*
 
 ### Requirements:
-1. Xcode 8.2
-2. iOS >= 9.0
+1. Xcode 8
+2. iOS >= 8.0
 
 ### Features:
 1. Capabilities to parse and validate Push Payment QR code string.
@@ -45,7 +45,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - Go to your Xcode project's **Build Settings** and set **Always Embed Swift Standard Libraries** to **YES**
 
 [1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
-[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.0/masterpassqrcoresdk-framework-ios.zip
+[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.1/masterpassqrcoresdk-framework-ios.zip
 
 ### Usage
 
