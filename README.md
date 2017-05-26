@@ -9,7 +9,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 *This SDK is developed in Swift and it works with Objective-C but it is recommended to use Swift for development with this SDK.*
 
 ### Requirements:
-1. Xcode 8
+1. Xcode 8.3.2
 2. iOS >= 8.0
 
 ### Features:
