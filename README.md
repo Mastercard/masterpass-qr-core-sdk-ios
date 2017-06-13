@@ -22,6 +22,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - In your *Podfile* write the following
 
   ```
+  use_frameworks!
   pod 'MasterpassQRCoreSDK'
   ```
 
@@ -45,7 +46,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - Go to your Xcode project's **Build Settings** and set **Always Embed Swift Standard Libraries** to **YES**
 
 [1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
-[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.2/masterpassqrcoresdk-framework-ios.zip
+[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.3/masterpassqrcoresdk-framework-ios.zip
 
 ### Usage
 
@@ -59,9 +60,7 @@ import MasterpassQRCoreSDK
 func parseQRCode(code: String) {
   do {
       // Parse qr code
-      var pushData = try MPQRParser.parseWithoutTagValidation(string: code)
-      // Validate parsed data
-      try pushData!.validate()
+      var pushData = try MPQRParser.parse(string: code)
       // Print data in string format
       print(pushData.dumpData())
   } catch MPQRError.invalidFormat(let message) {
@@ -106,12 +105,7 @@ __Objective-C__
 
   NSError *error;
   // Parse qr code
-  PushPaymentData *pushPaymentData = [MPQRParser parseWithoutTagValidationWithString:code error:&error];
-  if (!error) {
-      // Validate parsed data
-      [pushPaymentData validateAndReturnError:&error];
-  }
-
+  PushPaymentData *pushPaymentData = [MPQRParser parseWithString:code error:&error];
   if (error) {
     NSLog(handleError(error));
   } else {
