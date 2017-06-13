@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AdditionalDataTag Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/AdditionalDataTag" class="dashAnchor"></a>
+
+    <a title="AdditionalDataTag Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          MasterpassQRCoreSDK Docs
+        </a>
+        
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">MasterpassQRCoreSDK Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      AdditionalDataTag Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AbstractData.html">AbstractData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalData.html">AdditionalData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalDataTag.html">AdditionalDataTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ChecksumUtility.html">ChecksumUtility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MPQRParser.html">MPQRParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PPTag.html">PPTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PushPaymentData.html">PushPaymentData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TagInfo.html">TagInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MPQRError.html">MPQRError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TipConvenienceIndicator.html">TipConvenienceIndicator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>AdditionalDataTag</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AdditionalDataTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
+
+                </div>
+              </div>
+            <p>Additional information beyond basic may be required in certain cases. This information may be either presented by the merchant or acquirer or the Consumer may be prompted for entry on the app. For consumer prompt, the value field of Tag would be 3 asterisks i.e. ***. The acquirer / merchant should provide only minimum information in order to avoid making the size of data onerous. The length of each tag is variable up to 26 characters and overall it is not to exceed the maximum of 99 characters for the total size of the Additional Data Field.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Tags"></a>
+                <a name="//apple_ref/swift/Section/Tags" class="dashAnchor"></a>
+                <a href="#/Tags">
+                  <h3 class="section-name">Tags</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag18TAG_01_BILL_NUMBERCS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_01_BILL_NUMBER" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag18TAG_01_BILL_NUMBERCS_7TagInfo">TAG_01_BILL_NUMBER</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Invoice number or bill number</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_01_BILL_NUMBER</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"01"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_01_BILL_NUMBER"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag20TAG_02_MOBILE_NUMBERCS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_02_MOBILE_NUMBER" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag20TAG_02_MOBILE_NUMBERCS_7TagInfo">TAG_02_MOBILE_NUMBER</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mobile number: To be used for top-up or bill payment</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_02_MOBILE_NUMBER</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"02"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_02_MOBILE_NUMBER"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag15TAG_03_STORE_IDCS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_03_STORE_ID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag15TAG_03_STORE_IDCS_7TagInfo">TAG_03_STORE_ID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A distinctive number associated to a Store</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_03_STORE_ID</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"03"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_03_STORE_ID"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag21TAG_04_LOYALTY_NUMBERCS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_04_LOYALTY_NUMBER" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag21TAG_04_LOYALTY_NUMBERCS_7TagInfo">TAG_04_LOYALTY_NUMBER</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Typically a loyalty card number as provided by store or airline</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_04_LOYALTY_NUMBER</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"04"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_04_LOYALTY_NUMBER"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag19TAG_05_REFERENCE_IDCS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_05_REFERENCE_ID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag19TAG_05_REFERENCE_IDCS_7TagInfo">TAG_05_REFERENCE_ID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Any value as defined by merchant or acquirer in order to identify the transaction</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_05_REFERENCE_ID</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"05"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_05_REFERENCE_ID"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag18TAG_06_CONSUMER_IDCS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_06_CONSUMER_ID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag18TAG_06_CONSUMER_IDCS_7TagInfo">TAG_06_CONSUMER_ID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Typically a subscriber ID for subscription services or student enrollment number etc.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_06_CONSUMER_ID</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"06"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_06_CONSUMER_ID"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag18TAG_07_TERMINAL_IDCS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_07_TERMINAL_ID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag18TAG_07_TERMINAL_IDCS_7TagInfo">TAG_07_TERMINAL_ID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A distinctive number associated to a Terminal in the store</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_07_TERMINAL_ID</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"07"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_07_TERMINAL_ID"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag14TAG_08_PURPOSECS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_08_PURPOSE" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag14TAG_08_PURPOSECS_7TagInfo">TAG_08_PURPOSE</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Purpose of top-up for Mobile Top-Up use case- Airtime, Data, International Package</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_08_PURPOSE</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"08"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_08_PURPOSE"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_09CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_09" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_09CS_7TagInfo">TAG_09</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for definition by Network 1 (Visa)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_09</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"09"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_09"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_10CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_10" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_10CS_7TagInfo">TAG_10</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for definition by Network 1 (Visa)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_10</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"10"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_10"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_11CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_11" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_11CS_7TagInfo">TAG_11</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for definition by Network 2 (Mastercard)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_11</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"11"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_11"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_12CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_12" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_12CS_7TagInfo">TAG_12</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for definition by Network 2 (Mastercard)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_12</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"12"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_12"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_13CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_13" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_13CS_7TagInfo">TAG_13</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for definition by Network 3 (NPCI)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_13</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"13"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_13"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_14CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_14" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_14CS_7TagInfo">TAG_14</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for definition by Network 3 (NPCI)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_14</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"14"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_14"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_15CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_15" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_15CS_7TagInfo">TAG_15</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_15</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"15"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_15"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_16CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_16" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_16CS_7TagInfo">TAG_16</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_16</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"16"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_16"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_17CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_17" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_17CS_7TagInfo">TAG_17</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_17</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"17"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_17"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_18CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_18" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_18CS_7TagInfo">TAG_18</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_18</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"18"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_18"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_19CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_19" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_19CS_7TagInfo">TAG_19</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_19</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"19"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_19"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_20CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_20" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_20CS_7TagInfo">TAG_20</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_20</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"20"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_20"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_21CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_21" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_21CS_7TagInfo">TAG_21</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_21</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"21"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_21"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_22CS_7TagInfo"></a>
+                    <a name="//apple_ref/swift/Variable/TAG_22" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC19MasterpassQRCoreSDK17AdditionalDataTag6TAG_22CS_7TagInfo">TAG_22</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reserved for future use</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TAG_22</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">(</span><span class="s">"22"</span><span class="p">,</span> <span class="s">"^.{1,26}$"</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"TAG_22"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20conformance%20methods"></a>
+                <a name="//apple_ref/swift/Section/Protocol conformance methods" class="dashAnchor"></a>
+                <a href="#/Protocol%20conformance%20methods">
+                  <h3 class="section-name">Protocol conformance methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvP19MasterpassQRCoreSDK3Tag7allTagsGSaCS_7TagInfo_"></a>
+                    <a name="//apple_ref/swift/Variable/allTags" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvP19MasterpassQRCoreSDK3Tag7allTagsGSaCS_7TagInfo_">allTags</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">allTags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>List of TagInfo</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFP19MasterpassQRCoreSDK3Tag3tagFT3forSS_GSqCS_7TagInfo_"></a>
+                    <a name="//apple_ref/swift/Method/tag(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP19MasterpassQRCoreSDK3Tag3tagFT3forSS_GSqCS_7TagInfo_">tag(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">tag</span><span class="p">(</span><span class="k">for</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>TagInfo if tag is found else return nil</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>Copyright ©2016 MasterCard. All rights reserved. Version (1.0.3)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

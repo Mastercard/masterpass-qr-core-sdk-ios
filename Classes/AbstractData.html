@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AbstractData Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/AbstractData" class="dashAnchor"></a>
+
+    <a title="AbstractData Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          MasterpassQRCoreSDK Docs
+        </a>
+        
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">MasterpassQRCoreSDK Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      AbstractData Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AbstractData.html">AbstractData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalData.html">AdditionalData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalDataTag.html">AdditionalDataTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ChecksumUtility.html">ChecksumUtility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MPQRParser.html">MPQRParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PPTag.html">PPTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PushPaymentData.html">PushPaymentData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TagInfo.html">TagInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MPQRError.html">MPQRError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TipConvenienceIndicator.html">TipConvenienceIndicator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>AbstractData</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">AbstractData</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Abstract class for data</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Tag%20value%20accessors"></a>
+                <a name="//apple_ref/swift/Section/Tag value accessors" class="dashAnchor"></a>
+                <a href="#/Tag%20value%20accessors">
+                  <h3 class="section-name">Tag value accessors</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData15hasTagInfoValueFT3forCS_7TagInfo_Sb"></a>
+                    <a name="//apple_ref/swift/Method/hasTagInfoValue(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData15hasTagInfoValueFT3forCS_7TagInfo_Sb">hasTagInfoValue(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks if value for tagInfo is present internally</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter tagInfo: Tag info for which to check presence
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <code>true</code> if value exists else <code>false</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hasTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tag info for which to check presence</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if value exists else <code>false</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData15getTagInfoValueFT3forCS_7TagInfo_GSqPs9AnyObject__"></a>
+                    <a name="//apple_ref/swift/Method/getTagInfoValue(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData15getTagInfoValueFT3forCS_7TagInfo_GSqPs9AnyObject__">getTagInfoValue(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get value for tagInfo</p>
+
+<div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    <p>All the values are of <code>String</code> type except value for additional data <code><a href="../Classes/PPTag.html#/s:ZvC19MasterpassQRCoreSDK5PPTag28TAG_62_ADDITIONAL_DATA_FIELDCS_7TagInfo">PPTag.TAG_62_ADDITIONAL_DATA_FIELD</a></code> for which the returned type would be <code><a href="../Classes/AdditionalData.html">AdditionalData</a></code></p>
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    <p>Parameter tagInfo: Tag info for which to get value</p>
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <p>Value if found else <code>nil</code></p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">getTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tag info for which to get value</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Value if found else <code>nil</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData15setTagInfoValueFTPs9AnyObject_3forCS_7TagInfo_T_"></a>
+                    <a name="//apple_ref/swift/Method/setTagInfoValue(_:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData15setTagInfoValueFTPs9AnyObject_3forCS_7TagInfo_T_">setTagInfoValue(_:for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set value for tagInfo</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter value: Value to set
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter tagInfo: Tag info to set the value of
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">setTagInfoValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Value to set</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tag info to set the value of</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData18removeTagInfoValueFT3forCS_7TagInfo_T_"></a>
+                    <a name="//apple_ref/swift/Method/removeTagInfoValue(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData18removeTagInfoValueFT3forCS_7TagInfo_T_">removeTagInfoValue(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes value related to tagInfo</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter tagInfo: Remove value for tagInfo
+
+</div>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This method does nothing if the value is not found for tagInfo
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">removeTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Remove value for tagInfo</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData12tagInfoCountFT_Si"></a>
+                    <a name="//apple_ref/swift/Method/tagInfoCount()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData12tagInfoCountFT_Si">tagInfoCount()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns count of total tag info key value pair</p>
+
+<ul>
+<li>Return: Total number of tag info key value pair</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="nf">tagInfoCount</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Validation"></a>
+                <a name="//apple_ref/swift/Section/Validation" class="dashAnchor"></a>
+                <a href="#/Validation">
+                  <h3 class="section-name">Validation</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData8validateFzT_T_"></a>
+                    <a name="//apple_ref/swift/Method/validate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData8validateFzT_T_">validate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validate data</p>
+
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <ul>
+<li><code><a href="../Enums/MPQRError.html#/s:FO19MasterpassQRCoreSDK9MPQRError10missingTagFMS0_FT7messageGSqSS_4tagsGSaCS_7TagInfo__S0_">MPQRError.missingTag</a></code> if the value for tag info is <strong>not</strong> present while the tag was <strong>mandatory</strong></li>
+<li><code><a href="../Enums/MPQRError.html#/s:FO19MasterpassQRCoreSDK9MPQRError15invalidTagValueFMS0_FT3tagCS_7TagInfo5valueSS_S0_">MPQRError.invalidTagValue</a></code> 
+
+<ul>
+<li>If the value doesn&rsquo;t match pattern of the tag</li>
+<li>If the length of string representation of the value is out of [1, 99] range</li>
+</ul></li>
+</ul>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">validate</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Describing%20data"></a>
+                <a name="//apple_ref/swift/Section/Describing data" class="dashAnchor"></a>
+                <a href="#/Describing%20data">
+                  <h3 class="section-name">Describing data</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC19MasterpassQRCoreSDK12AbstractData11descriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC19MasterpassQRCoreSDK12AbstractData11descriptionSS">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>String representation of the data. It will generate a string which is parseable back to data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData8dumpDataFT_SS"></a>
+                    <a name="//apple_ref/swift/Method/dumpData()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData8dumpDataFT_SS">dumpData()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Dump internal data in a string representation</p>
+
+<p><em>Useful for debugging purposes</em></p>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    String representation of internal data
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dumpData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>String representation of internal data</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Instance%20methods"></a>
+                <a name="//apple_ref/swift/Section/Instance methods" class="dashAnchor"></a>
+                <a href="#/Instance%20methods">
+                  <h3 class="section-name">Instance methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC19MasterpassQRCoreSDK12AbstractData7isEqualFGSqP__Sb"></a>
+                    <a name="//apple_ref/swift/Method/isEqual(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC19MasterpassQRCoreSDK12AbstractData7isEqualFGSqP__Sb">isEqual(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Equality check</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">isEqual</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>Copyright ©2016 MasterCard. All rights reserved. Version (1.0.3)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

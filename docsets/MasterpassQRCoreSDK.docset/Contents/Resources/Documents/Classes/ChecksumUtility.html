@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ChecksumUtility Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/ChecksumUtility" class="dashAnchor"></a>
+
+    <a title="ChecksumUtility Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          MasterpassQRCoreSDK Docs
+        </a>
+        
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">MasterpassQRCoreSDK Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      ChecksumUtility Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AbstractData.html">AbstractData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalData.html">AdditionalData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalDataTag.html">AdditionalDataTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ChecksumUtility.html">ChecksumUtility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MPQRParser.html">MPQRParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PPTag.html">PPTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PushPaymentData.html">PushPaymentData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TagInfo.html">TagInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MPQRError.html">MPQRError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TipConvenienceIndicator.html">TipConvenienceIndicator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>ChecksumUtility</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">ChecksumUtility</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Utility for checksum generation and validation</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility5crc16FT6stringSS_SS"></a>
+                    <a name="//apple_ref/swift/Method/crc16(string:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility5crc16FT6stringSS_SS">crc16(string:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generate CRC16</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter string: String to generate crc for
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    CRC16 in 4 digit hex code string format with <code>0</code> as padding
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">crc16</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>string</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String to generate crc for</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>CRC16 in 4 digit hex code string format with <code>0</code> as padding</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility12isValidCrc16FT8qrStringSS_Sb"></a>
+                    <a name="//apple_ref/swift/Method/isValidCrc16(qrString:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility12isValidCrc16FT8qrStringSS_Sb">isValidCrc16(qrString:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks if the qr string includes valid CRC16</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter qrString: QR code string
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <code>true</code> if the CRC16 in the qrString is valid else <code>false</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">isValidCrc16</span><span class="p">(</span><span class="nv">qrString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>qrString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>QR code string</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the CRC16 in the qrString is valid else <code>false</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Luhn%20checksum"></a>
+                <a name="//apple_ref/swift/Section/Luhn checksum" class="dashAnchor"></a>
+                <a href="#/Luhn%20checksum">
+                  <h3 class="section-name">Luhn checksum</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility20validateLuhnChecksumFSSSb"></a>
+                    <a name="//apple_ref/swift/Method/validateLuhnChecksum(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility20validateLuhnChecksumFSSSb">validateLuhnChecksum(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Valid luhn checksum of the string</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter string: String to valid luhn checksum for
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    <code>true</code> if luhn checksum of the string is valid
+
+</div>
+
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>string</code> should be numeric otherwise this method returns false
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">validateLuhnChecksum</span><span class="p">(</span><span class="n">_</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>string</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String to valid luhn checksum for</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if luhn checksum of the string is valid</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility12luhnChecksumFzSSCSo8NSNumber"></a>
+                    <a name="//apple_ref/swift/Method/luhnChecksum(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility12luhnChecksumFzSSCSo8NSNumber">luhnChecksum(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generate luhn checksum of the string.</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter string: String to valid luhn checksum for
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    Integer luhn checksum
+
+</div>
+
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Enums/MPQRError.html#/s:FO19MasterpassQRCoreSDK9MPQRError13invalidFormatFMS0_FT7messageSS_S0_">MPQRError.invalidFormat</a></code> if the the string is not numeric
+
+</div>
+
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    Check digit should <strong>not</strong> be present in the string
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">luhnChecksum</span><span class="p">(</span><span class="n">_</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">NSNumber</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>string</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String to valid luhn checksum for</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Integer luhn checksum</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility12luhnChecksumFzTSS13hasCheckDigitSb_CSo8NSNumber"></a>
+                    <a name="//apple_ref/swift/Method/luhnChecksum(_:hasCheckDigit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC19MasterpassQRCoreSDK15ChecksumUtility12luhnChecksumFzTSS13hasCheckDigitSb_CSo8NSNumber">luhnChecksum(_:hasCheckDigit:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generate luhn checksum of the string</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter string: String to valid luhn checksum for
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter hasCheckDigit: Whether <code>Check digit</code> is already present in the string or not.
+
+</div>
+
+<div class="aside aside-returns">
+    <p class="aside-title">Returns</p>
+    Integer luhn checksum
+
+</div>
+
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Enums/MPQRError.html#/s:FO19MasterpassQRCoreSDK9MPQRError13invalidFormatFMS0_FT7messageSS_S0_">MPQRError.invalidFormat</a></code> if the the string is not numeric
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">luhnChecksum</span><span class="p">(</span><span class="n">_</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hasCheckDigit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">NSNumber</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>string</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String to valid luhn checksum for</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hasCheckDigit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether <code>Check digit</code> is already present in the string or not.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Integer luhn checksum</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>Copyright ©2016 MasterCard. All rights reserved. Version (1.0.3)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

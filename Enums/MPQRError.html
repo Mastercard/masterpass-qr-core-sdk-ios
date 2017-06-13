@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MPQRError Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Enum/MPQRError" class="dashAnchor"></a>
+
+    <a title="MPQRError Enum Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          MasterpassQRCoreSDK Docs
+        </a>
+        
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">MasterpassQRCoreSDK Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      MPQRError Enum Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AbstractData.html">AbstractData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalData.html">AdditionalData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalDataTag.html">AdditionalDataTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ChecksumUtility.html">ChecksumUtility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MPQRParser.html">MPQRParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PPTag.html">PPTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PushPaymentData.html">PushPaymentData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TagInfo.html">TagInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MPQRError.html">MPQRError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/TipConvenienceIndicator.html">TipConvenienceIndicator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MPQRError</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MPQRError</span> <span class="p">:</span> <span class="kt">CustomNSError</span></code></pre>
+
+                </div>
+              </div>
+            <p>MPQR Errors. These errors are thrown while parsing the qr code string.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO19MasterpassQRCoreSDK9MPQRError13invalidFormatFMS0_FT7messageSS_S0_"></a>
+                    <a name="//apple_ref/swift/Element/invalidFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO19MasterpassQRCoreSDK9MPQRError13invalidFormatFMS0_FT7messageSS_S0_">invalidFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Invalid format</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter message: Message of the exception. Accessible via <code>MPQRErrorMessageKey</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">invalidFormat</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Message of the exception. Accessible via <code>MPQRErrorMessageKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO19MasterpassQRCoreSDK9MPQRError15invalidTagValueFMS0_FT3tagCS_7TagInfo5valueSS_S0_"></a>
+                    <a name="//apple_ref/swift/Element/invalidTagValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO19MasterpassQRCoreSDK9MPQRError15invalidTagValueFMS0_FT3tagCS_7TagInfo5valueSS_S0_">invalidTagValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Invalid tag value</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter tag: TagInfo. Accessible via <code>MPQRErrorTagInfoKey</code>
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter value: Value. Accessible via <code>MPQRErrorTagValueKey</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">invalidTagValue</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>TagInfo. Accessible via <code>MPQRErrorTagInfoKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Value. Accessible via <code>MPQRErrorTagValueKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO19MasterpassQRCoreSDK9MPQRError10unknownTagFMS0_FT9tagStringSS_S0_"></a>
+                    <a name="//apple_ref/swift/Element/unknownTag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO19MasterpassQRCoreSDK9MPQRError10unknownTagFMS0_FT9tagStringSS_S0_">unknownTag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unknown tag</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter tagString: Unknown tag string. Accessible via <code>MPQRErrorTagValueKey</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">unknownTag</span><span class="p">(</span><span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Unknown tag string. Accessible via <code>MPQRErrorTagValueKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO19MasterpassQRCoreSDK9MPQRError10missingTagFMS0_FT7messageGSqSS_4tagsGSaCS_7TagInfo__S0_"></a>
+                    <a name="//apple_ref/swift/Element/missingTag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO19MasterpassQRCoreSDK9MPQRError10missingTagFMS0_FT7messageGSqSS_4tagsGSaCS_7TagInfo__S0_">missingTag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Missing tag</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter message: message of the exception. Accessible via <code>MPQRErrorMessageKey</code>
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter tags: List of missing tagInfos. Accessible via <code>MPQRErrorTagsKey</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">missingTag</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>message of the exception. Accessible via <code>MPQRErrorMessageKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tags</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of missing tagInfos. Accessible via <code>MPQRErrorTagsKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO19MasterpassQRCoreSDK9MPQRError14conflictingTagFMS0_FT7messageGSqSS_4tagsGSaCS_7TagInfo__S0_"></a>
+                    <a name="//apple_ref/swift/Element/conflictingTag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO19MasterpassQRCoreSDK9MPQRError14conflictingTagFMS0_FT7messageGSqSS_4tagsGSaCS_7TagInfo__S0_">conflictingTag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Conflicting tag</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter message: message of the exception. Accessible via <code>MPQRErrorMessageKey</code>
+
+</div>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter tags: List of conflicting tagInfos. Accessible via <code>MPQRErrorTagsKey</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">conflictingTag</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>message of the exception. Accessible via <code>MPQRErrorMessageKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tags</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of conflicting tagInfos. Accessible via <code>MPQRErrorTagsKey</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Protocol%20conformance%20methods"></a>
+                <a name="//apple_ref/swift/Section/Protocol conformance methods" class="dashAnchor"></a>
+                <a href="#/Protocol%20conformance%20methods">
+                  <h3 class="section-name">Protocol conformance methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvO19MasterpassQRCoreSDK9MPQRError11errorDomainSS"></a>
+                    <a name="//apple_ref/swift/Variable/errorDomain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvO19MasterpassQRCoreSDK9MPQRError11errorDomainSS">errorDomain</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Domain of the error</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">errorDomain</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vO19MasterpassQRCoreSDK9MPQRError9errorCodeSi"></a>
+                    <a name="//apple_ref/swift/Property/errorCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vO19MasterpassQRCoreSDK9MPQRError9errorCodeSi">errorCode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Error code</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorCode</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vO19MasterpassQRCoreSDK9MPQRError13errorUserInfoGVs10DictionarySSP__"></a>
+                    <a name="//apple_ref/swift/Property/errorUserInfo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vO19MasterpassQRCoreSDK9MPQRError13errorUserInfoGVs10DictionarySSP__">errorUserInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Error user info</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorUserInfo</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vO19MasterpassQRCoreSDK9MPQRError20localizedDescriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/localizedDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vO19MasterpassQRCoreSDK9MPQRError20localizedDescriptionSS">localizedDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Localized description</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">localizedDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>Copyright ©2016 MasterCard. All rights reserved. Version (1.0.3)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
