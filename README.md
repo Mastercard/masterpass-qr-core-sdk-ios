@@ -6,11 +6,11 @@ You can use this SDK to generate Push Payment QR code string also by filling the
 
 _This sdk only deals with actual QR code strings. So you need to use a separate QR scanning SDK to get QR code strings. You can use [Masterpass QR Scan SDK][1]_
 
-*This SDK is developed in Swift and it works with Objective-C but it is recommended to use Swift for development with this SDK.*
+*This SDK is developed in Objective-C and it works with Swift.*
 
 ### Requirements:
-1. Xcode 8.3.2
-2. iOS >= 8.0
+1. Xcode 9.0+
+2. iOS 8.0+
 
 ### Features:
 1. Capabilities to parse and validate Push Payment QR code string.
@@ -33,7 +33,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 ##### Swift
 - Download the latest release of [Masterpass QR Core SDK][2].
 - Unzip the file.
-- Go to your Xcode project’s “General” settings. Drag MasterpassQRCoreSDK.framework to the “Embedded Binaries” section. Make sure to select **Copy items if needed** and click Finish.
+- Go to your Xcode project’s target “General” settings. Drag MasterpassQRCoreSDK.framework to the “Embedded Binaries” section. Make sure to select **Copy items if needed** and click Finish.
 - Create a new **Run Script Phase** in your app’s target’s **Build Phases** and paste the following snippet in the script text field:
 
 	`bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/MasterpassQRCoreSDK.framework/strip-frameworks.sh"`
@@ -46,7 +46,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - Go to your Xcode project's **Build Settings** and set **Always Embed Swift Standard Libraries** to **YES**
 
 [1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
-[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.3/masterpassqrcoresdk-framework-ios.zip
+[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.0/masterpassqrcoresdk-framework-ios.zip
 
 ### Usage
 
@@ -60,19 +60,16 @@ import MasterpassQRCoreSDK
 func parseQRCode(code: String) {
   do {
       // Parse qr code
-      var pushData = try MPQRParser.parse(string: code)
+      let pushData = try MPQRParser.parse(string:code)
       // Print data in string format
       print(pushData.dumpData())
-  } catch MPQRError.invalidFormat(let message) {
-      print("Invalid exception: \(message)")
-  } catch MPQRError.invalidTagValue(let tag, let value) {
-      print("Invalid tag \(tag) with value \(value)")
-  } catch MPQRError.missingTag(let message, let tags) {
-      print("Missing tags \(tags) with message: \(message ?? "")")
-  } catch MPQRError.unknownTag(let tagString) {
-      print("Unknown tag \(tagString)")
-  } catch MPQRError.conflictingTag(let message, let tags) {
-      print("Conflicting tags \(tags) with message: \(message ?? "")")
+  } catch let error as MPQRError{
+      if let str = error.getString(){
+           print("Error: \(str)")
+      }else
+      {
+          print("Unknown error occurred \(error)")
+      }
   } catch {
       print("Unknown error occurred \(error)")
   }
@@ -85,33 +82,23 @@ __Objective-C__
 @import MasterpassQRCoreSDK;
 
 - (void)parseQRCode:(NSString *)code {
-  NSString* (^handleError)(NSError *) = ^NSString* (NSError* error) {
-      if (error.domain == MPQRErrorDomain) {
-          if (error.code == InvalidFormat) {
-              return [NSString stringWithFormat:@"Invalid format: %@", error.userInfo[MPQRErrorMessageKey]];
-          } else if (error.code == InvalidTagValue) {
-              return [NSString stringWithFormat:@"Invalid tag %@ with value %@", error.userInfo[MPQRErrorTagInfoKey], error.userInfo[MPQRErrorTagValueKey]];
-          } else if (error.code == MissingTag) {
-              return [NSString stringWithFormat:@"Missing tags %@ with message %@", error.userInfo[MPQRErrorTagsKey], error.userInfo[MPQRErrorMessageKey]];
-          } else if (error.code == UnknownTag) {
-              return [NSString stringWithFormat:@"Unknown tag %@", error.userInfo[MPQRErrorTagValueKey]];
-          } else if (error.code == ConflictingTag) {
-              return [NSString stringWithFormat:@"Conflicting tags %@ with message %@", error.userInfo[MPQRErrorTagsKey], error.userInfo[MPQRErrorMessageKey]];
-          }
-      }
+    PushPaymentData *pushPaymentData;
+    NSString* (^handleError)(MPQRError *) = ^NSString* (MPQRError* error) {
+        if (error.domain == MPQRErrorDomain) {
+            return [NSString stringWithFormat:@"Error: %@", [error getString]];
+        }
+        return [NSString stringWithFormat:@"Unkown error occured %@", error];
+    };
 
-      return [NSString stringWithFormat:@"Unknown error occurred %@", error];
-  };
+    MPQRError *error;
+    pushPaymentData = [MPQRParser parse:code error:&error];
 
-  NSError *error;
-  // Parse qr code
-  PushPaymentData *pushPaymentData = [MPQRParser parseWithString:code error:&error];
-  if (error) {
-    NSLog(handleError(error));
-  } else {
-    // Print data in string format
-    NSLog([pushPaymentData dumpData]);
-  }
+    if (error) {
+        NSLog(handleError(error));
+    }else
+    {
+        NSLog([pushPaymentData dumpData]);
+    }
 }
 ```
 
@@ -130,28 +117,28 @@ func generateQRCode(from string: String) -> UIImage? {
         // Set scale according to your device display. If the qr code is blurry then increase scale
         let transform = CGAffineTransform(scaleX: 3, y: 3)
 
-        if let output = filter.outputImage?.applying(transform) {
+        if let output = filter.outputImage?.transformed(by: transform) {
             return UIImage(ciImage: output)
         }
     }
-
     return nil
 }
 
 func generatePushPaymentQR() {
-  // Generate
-  let pushPaymentData = PushPaymentData()
-  // Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = "01"
-  do {
-      // Validate generated data
-      try pushPaymentData.validate()
-  } catch {
-      print("Error occurred during validation \(error)")
-      return
-  }
+    // Generate
+    let pushPaymentData = PushPaymentData()
+    // Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = "01"
+    var ppdString:String?
+    do {
+        // Validate generated data
+        ppdString = try pushPaymentData.generatePushPaymentString()
+    } catch {
+        print("Error occurred during validation \(error)")
+        return
+    }
 
-  // Generate image
-  let image = generateQRCode(from: pushPaymentData.generatePushPaymentString())
+    // Generate image
+    let image = generateQRCode(from: ppdString!)
 }
 ```
 
@@ -173,19 +160,18 @@ __Objective-C__
 }
 
 - (void)generatePushPaymentQR {
-  // Generate
-  PushPaymentData *pushPaymentData = [[PushPaymentData alloc] init];
-  // Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = @"01"
+    // Generate
+    PushPaymentData *pushPaymentData = [[PushPaymentData alloc] init];
+    // Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = @"01"
 
-  NSError *error;
-  // Validate parsed data
-  [pushPaymentData validateAndReturnError:&error];
+    MPQRError *error;
+    NSString* strQRCode = [pushPaymentData generatePushPaymentString:&error];
 
-  if (error) {
-    NSLog(@"Error occurred during validation %@", error);
-  } else {
-    // Generate image
-    UIImage *image = [self generateQRCode: [pushPaymentData generatePushPaymentString]];
-  }
+    if (error) {
+        NSLog(@"Error: %@", error);
+    } else {
+        // Generate image
+        UIImage *image = [self generateQRCode: strQRCode];
+    }
 }
 ```
