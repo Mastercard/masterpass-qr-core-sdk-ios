@@ -9,7 +9,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 *This SDK is developed in Swift and it works with Objective-C but it is recommended to use Swift for development with this SDK.*
 
 ### Requirements:
-1. Xcode 8.3.2
+1. Xcode 9.0.0
 2. iOS >= 8.0
 
 ### Features:
@@ -23,7 +23,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 
   ```
   use_frameworks!
-  pod 'MasterpassQRCoreSDK'
+  pod 'MasterpassQRCoreSDK', '~> 1.0.5'
   ```
 
 - Do `pod install`
@@ -46,7 +46,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - Go to your Xcode project's **Build Settings** and set **Always Embed Swift Standard Libraries** to **YES**
 
 [1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
-[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.3/masterpassqrcoresdk-framework-ios.zip
+[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/1.0.5/masterpassqrcoresdk-framework-ios.zip
 
 ### Usage
 
