@@ -27,6 +27,7 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
   ```
 
 - Do `pod install`
+- For Objective-C, go to your Xcode project's **Build Settings** and set **Always Embed Swift Standard Libraries** to **YES** 
 - Everything is setup now
 
 #### Manual
