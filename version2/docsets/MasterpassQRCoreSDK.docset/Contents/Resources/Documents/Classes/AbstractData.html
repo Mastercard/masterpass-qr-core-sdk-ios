@@ -74,7 +74,7 @@
                 <a class="nav-group-task-link" href="../Classes/LanguageTag.html">LanguageTag</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)MAIData">MAIData</a>
+                <a class="nav-group-task-link" href="../Classes/MAIData.html">MAIData</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MPQRError.html">MPQRError</a>
@@ -98,7 +98,7 @@
                 <a class="nav-group-task-link" href="../Classes/TemplateDataTag.html">TemplateDataTag</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a>
+                <a class="nav-group-task-link" href="../Classes/UnrestrictedData.html">UnrestrictedData</a>
               </li>
             </ul>
           </li>
@@ -470,11 +470,6 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>Value if found else <code>nil</code></p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    All the values are of <code>String</code> type except value for additional data <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_62_ADDITIONAL_DATA_FIELD">PPTag.TAG_62_ADDITIONAL_DATA_FIELD</a></code> for which the returned type would be <code>AdditionalData</code>
-
-</div>
                       </div>
                     </section>
                   </div>
@@ -630,6 +625,310 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>Total number of tag info key value pair</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)getTagInfoValueForTagString:error:"></a>
+                    <a name="//apple_ref/objc/Method/-getTagInfoValueForTagString:error:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)getTagInfoValueForTagString:error:">-getTagInfoValueForTagString:error:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get value for tagInfo</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nf">getTagInfoValueForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">strTagInfo</span>
+                                      <span class="nf">error</span><span class="p">:</span>
+                                          <span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getTagInfoValue</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">strTagInfo</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Any</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>strTagInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSString* tag for which to get value</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Value if found else <code>nil</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)setTagInfoValue:forTagString:error:"></a>
+                    <a name="//apple_ref/objc/Method/-setTagInfoValue:forTagString:error:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)setTagInfoValue:forTagString:error:">-setTagInfoValue:forTagString:error:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set value for tagInfo</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setTagInfoValue</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+           <span class="nf">forTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">strTagInfo</span>
+                  <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setTagInfoValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="n">forTagString</span> <span class="nv">strTagInfo</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Value to set</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>strTagInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSString* tag to set the value of</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)setValueInTagRange:low:high:error:"></a>
+                    <a name="//apple_ref/objc/Method/-setValueInTagRange:low:high:error:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)setValueInTagRange:low:high:error:">-setValueInTagRange:low:high:error:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set value in range of tag</p>
+
+<p>Used for MAI Data, Unrestricted data in push payment data, or unrestricted data in additional data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setValueInTagRange</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                       <span class="nf">low</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">low</span>
+                      <span class="nf">high</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">high</span>
+                     <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setValueInTagRange</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">low</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">high</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>of to be inserted</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>low</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>lower index inclusive</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>high</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>higher index exclusive</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)removeValue:"></a>
+                    <a name="//apple_ref/objc/Method/-removeValue:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)removeValue:">-removeValue:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove value at specified tag</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeValue</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>specified tag at which to remove value</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)setRootTag:"></a>
+                    <a name="//apple_ref/objc/Method/-setRootTag:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)setRootTag:">-setRootTag:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set RootTag: the root tag that the object belong to</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setRootTag</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">rootTag</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setRootTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">rootTag</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rootTag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>can be null</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -843,188 +1142,6 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)AbstractData(im)setValueInTagRange:low:high:error:"></a>
-                    <a name="//apple_ref/objc/Method/-setValueInTagRange:low:high:error:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)AbstractData(im)setValueInTagRange:low:high:error:">-setValueInTagRange:low:high:error:</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Set value in range of tag</p>
-
-<p>Used for MAI Data, Unrestricted data in push payment data, or unrestricted data in additional data</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setValueInTagRange</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
-                       <span class="nf">low</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">low</span>
-                      <span class="nf">high</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">high</span>
-                     <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setValueInTagRange</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">low</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">high</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="k">throws</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>of to be inserted</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>low</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>lower index inclusive</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>high</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>higher index exclusive</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)AbstractData(im)removeValue:"></a>
-                    <a name="//apple_ref/objc/Method/-removeValue:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)AbstractData(im)removeValue:">-removeValue:</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Remove value at specified tag</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeValue</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>tagInfo</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>specified tag at which to remove value</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)AbstractData(im)setRootTag:"></a>
-                    <a name="//apple_ref/objc/Method/-setRootTag:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)AbstractData(im)setRootTag:">-setRootTag:</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Set RootTag: the root tag that the object belong to</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setRootTag</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">rootTag</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setRootTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">rootTag</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rootTag</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>can be null</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -1033,7 +1150,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.0)</p>
+      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.4)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

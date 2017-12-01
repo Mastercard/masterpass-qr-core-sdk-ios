@@ -74,7 +74,7 @@
                 <a class="nav-group-task-link" href="../Classes/LanguageTag.html">LanguageTag</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)MAIData">MAIData</a>
+                <a class="nav-group-task-link" href="../Classes/MAIData.html">MAIData</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MPQRError.html">MPQRError</a>
@@ -98,7 +98,7 @@
                 <a class="nav-group-task-link" href="../Classes/TemplateDataTag.html">TemplateDataTag</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a>
+                <a class="nav-group-task-link" href="../Classes/UnrestrictedData.html">UnrestrictedData</a>
               </li>
             </ul>
           </li>
@@ -1007,14 +1007,14 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes.html#/c:objc(cs)MAIData">MAIData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">getMAIDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">getMAIDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
                                        <span class="nf">error</span><span class="p">:</span>
                                            <span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getMAIData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes.html#/c:objc(cs)MAIData">MAIData</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getMAIData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1057,7 +1057,7 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get MAI Data for some tag</p>
+                        <p>Set MAIData tag for some tag. In case the tag need to be specified in certain tag, this function is used instead. For example, we want to set MAID to specific tag 28.</p>
 
                       </div>
                       <div class="declaration">
@@ -1065,13 +1065,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setMAIDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
-                          <span class="nf">data</span><span class="p">:(</span><span class="n"><a href="../Classes.html#/c:objc(cs)MAIData">MAIData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">data</span>
+                          <span class="nf">data</span><span class="p">:(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">data</span>
                          <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setMAIDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/c:objc(cs)MAIData">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setMAIDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1549,14 +1549,14 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
 <span class="nf">getUnreservedDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
                         <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getUnreservedData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getUnreservedData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1607,13 +1607,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setUnreservedDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
-                                 <span class="nf">data</span><span class="p">:(</span><span class="n"><a href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">data</span>
+                                 <span class="nf">data</span><span class="p">:(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">data</span>
                                 <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setUnreservedDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setUnreservedDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1664,7 +1664,8 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Set MAI Data for some tag without specifying the tag, the tag will be automatically assign</p>
+                        <p>Set MAI Data for some tag without specifying the tag, the tag will be automatically assign. This function will set MAID data for tag 26 to 51 automatically given MAID data, starting from lowest tag to highest tag.
+For example,  first call of this function will assign data to tag 26. Second call of this function will assign data to tag 27, and so on.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>If the tags are all taken, it will throw error as data cannot be set</p>
@@ -1676,13 +1677,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicMAIDTag</span><span class="p">:(</span><span class="n"><a href="../Classes.html#/c:objc(cs)MAIData">MAIData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicMAIDTag</span><span class="p">:(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
                     <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDynamicMAIDTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/c:objc(cs)MAIData">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDynamicMAIDTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1721,7 +1722,8 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Set Unrestricted Data for some tag without specifying the tag, the tag will be automatically assign</p>
+                        <p>Set Unrestricted Data for some tag without specifying the tag, the tag will be automatically assign. This function will set UnrestrictedData data for tag 80 to 99 automatically given UnrestrictedData data, starting from lowest tag to highest tag.
+For example,  first call of this function will assign data to tag 80. Second call of this function will assign data to tag 81, and so on.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>If the tags are all taken, it will throw error as data cannot be set</p>
@@ -1733,13 +1735,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicUnrestrictedTag</span><span class="p">:(</span><span class="n"><a href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicUnrestrictedTag</span><span class="p">:(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
                             <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDynamicUnrestrictedTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDynamicUnrestrictedTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1773,7 +1775,7 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
       </article>
     </div>
     <section class="footer">
-      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.0)</p>
+      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.4)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

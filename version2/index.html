@@ -73,7 +73,7 @@
                 <a class="nav-group-task-link" href="Classes/LanguageTag.html">LanguageTag</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes.html#/c:objc(cs)MAIData">MAIData</a>
+                <a class="nav-group-task-link" href="Classes/MAIData.html">MAIData</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MPQRError.html">MPQRError</a>
@@ -97,7 +97,7 @@
                 <a class="nav-group-task-link" href="Classes/TemplateDataTag.html">TemplateDataTag</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes.html#/c:objc(cs)UnrestrictedData">UnrestrictedData</a>
+                <a class="nav-group-task-link" href="Classes/UnrestrictedData.html">UnrestrictedData</a>
               </li>
             </ul>
           </li>
@@ -163,6 +163,9 @@
 <li>Capabilities to parse and validate Push Payment QR code string.</li>
 <li>Generate Push Payment QR code string.</li>
 </ol>
+<h3 id='documentation' class='heading'>Documentation</h3>
+
+<p>The code documentation can be found on Github link <a href="https://mastercard.github.io/masterpass-qr-core-sdk-ios">here</a>.</p>
 <h3 id='installation' class='heading'>Installation</h3>
 <h4 id='cocoapods' class='heading'>Cocoapods</h4>
 
@@ -181,7 +184,7 @@
 <h5 id='swift' class='heading'>Swift</h5>
 
 <ul>
-<li>Download the latest release of <a href="https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.0/masterpassqrcoresdk-framework-ios.zip">Masterpass QR Core SDK</a>.</li>
+<li>Download the latest release of <a href="https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.4/masterpassqrcoresdk-framework-ios.zip">Masterpass QR Core SDK</a>.</li>
 <li>Unzip the file.</li>
 <li>Go to your Xcode project’s target “General” settings. Drag MasterpassQRCoreSDK.framework to the “Embedded Binaries” section. Make sure to select <strong>Copy items if needed</strong> and click Finish.</li>
 <li><p>Create a new <strong>Run Script Phase</strong> in your app’s target’s <strong>Build Phases</strong> and paste the following snippet in the script text field:</p>
@@ -194,7 +197,6 @@
 
 <ul>
 <li>Follow same instructions as Swift</li>
-<li>Go to your Xcode project&rsquo;s <strong>Build Settings</strong> and set <strong>Always Embed Swift Standard Libraries</strong> to <strong>YES</strong></li>
 </ul>
 <h3 id='usage' class='heading'>Usage</h3>
 <h4 id='parsing' class='heading'>Parsing</h4>
@@ -257,7 +259,7 @@
         <span class="c1">// Set scale according to your device display. If the qr code is blurry then increase scale</span>
         <span class="k">let</span> <span class="nv">transform</span> <span class="o">=</span> <span class="kt">CGAffineTransform</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="k">let</span> <span class="nv">output</span> <span class="o">=</span> <span class="n">filter</span><span class="o">.</span><span class="n">outputImage</span><span class="p">?</span><span class="o">.</span><span class="nf">transformed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">transform</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">output</span> <span class="o">=</span> <span class="n">filter</span><span class="o">.</span><span class="n">outputImage</span><span class="p">?</span><span class="o">.</span><span class="nf">applying</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">ciImage</span><span class="p">:</span> <span class="n">output</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -267,7 +269,166 @@
 <span class="kd">func</span> <span class="nf">generatePushPaymentQR</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// Generate</span>
     <span class="k">let</span> <span class="nv">pushPaymentData</span> <span class="o">=</span> <span class="kt">PushPaymentData</span><span class="p">()</span>
+
     <span class="c1">// Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = "01"</span>
+
+    <span class="c1">// Payload format indicator</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">payloadFormatIndicator</span> <span class="o">=</span> <span class="s">"01"</span>
+
+    <span class="c1">// Point of initiation method</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">pointOfInitiationMethod</span> <span class="o">=</span> <span class="s">"12"</span>
+
+    <span class="c1">// Merchant identifier Visa with tag `02`</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierVisa02</span> <span class="o">=</span> <span class="s">"4600678934521435"</span>
+
+    <span class="c1">// Merchant identifier Visa with tag `03`</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierVisa03</span> <span class="o">=</span> <span class="s">"4600678934521467"</span>
+
+    <span class="c1">// Merchant identifier MasterCard with tag `04`</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierMastercard04</span> <span class="o">=</span> <span class="s">"555544443333111"</span>
+
+    <span class="c1">// Merchant identifier MasterCard with tag `05`</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierMastercard05</span> <span class="o">=</span> <span class="s">"555544443333222"</span>
+
+    <span class="c1">// Merchant identifier NPCI with tag `06`</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierNPCI06</span> <span class="o">=</span> <span class="s">"5600678934521435"</span>
+
+    <span class="c1">// Merchant identifier NPCI with tag `07`</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierNPCI07</span> <span class="o">=</span> <span class="s">"5600678934521459"</span>
+
+    <span class="c1">//Merchant identifier (EMVCo)IFSCCode</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierIFSCCODE08</span> <span class="o">=</span> <span class="s">"6800678934521565"</span>
+
+    <span class="c1">//Merchant identifier (Discover)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierDISCOVER09</span> <span class="o">=</span> <span class="s">"7800678934521675"</span>
+
+    <span class="c1">//Merchant identifier (Discover)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierDISCOVER10</span> <span class="o">=</span> <span class="s">"7900678934521655"</span>
+
+    <span class="c1">//Merchant identifier (Amex)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierAMEX11</span> <span class="o">=</span> <span class="s">"3200678934521434"</span>
+
+    <span class="c1">//Merchant identifier (Amex)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierAMEX12</span> <span class="o">=</span> <span class="s">"3400678934521469"</span>
+
+    <span class="c1">//Merchant identifier (JCB)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierJCB13</span> <span class="o">=</span> <span class="s">"5700678934521457"</span>
+
+    <span class="c1">//Merchant identifier (JCB)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierJCB14</span> <span class="o">=</span> <span class="s">"5800678934521435"</span>
+
+    <span class="c1">//Merchant identifier (UnionPay)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierUNIONPAY15</span> <span class="o">=</span> <span class="s">"5800678934524535"</span>
+
+    <span class="c1">//Merchant identifier (UnionPay)</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantIdentifierUNIONPAY16</span> <span class="o">=</span> <span class="s">"4850678934521598"</span>
+
+    <span class="c1">//17 - 25 for merchant identifier EMVCO</span>
+    <span class="k">try!</span> <span class="n">pushPaymentData</span><span class="o">.</span><span class="nf">setMerchantIdentifierEMVCODataForTagString</span><span class="p">(</span><span class="s">"17"</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="s">"4657678934521449"</span><span class="p">)</span>
+
+
+    <span class="c1">//Merchant Identifier data 26-51</span>
+    <span class="k">let</span> <span class="nv">maiData</span> <span class="o">=</span> <span class="kt">MAIData</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">rootTag</span> <span class="o">=</span> <span class="s">"26"</span>
+    <span class="n">maiData</span><span class="o">.</span><span class="nf">setRootTag</span><span class="p">(</span><span class="n">rootTag</span><span class="p">)</span>
+    <span class="n">maiData</span><span class="o">.</span><span class="kt">AID</span> <span class="o">=</span> <span class="s">"AID0349509H"</span>
+    <span class="k">try!</span> <span class="n">maiData</span><span class="o">.</span><span class="nf">setPaymentNetworkSpecific</span><span class="p">(</span><span class="s">"PNS93484jf"</span><span class="p">,</span> <span class="nv">forTag</span><span class="p">:</span><span class="s">"01"</span><span class="p">)</span>
+    <span class="k">try!</span> <span class="n">maiData</span><span class="o">.</span><span class="nf">setDynamicPaymentNetworkSpecific</span><span class="p">(</span><span class="s">"PNSDyn8494738"</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">str01</span> <span class="o">=</span> <span class="k">try</span><span class="o">!</span><span class="n">maiData</span><span class="o">.</span><span class="nf">getPaymentNetworkSpecific</span><span class="p">(</span><span class="nv">forTag</span><span class="p">:</span> <span class="s">"01"</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">arr</span> <span class="o">=</span> <span class="n">maiData</span><span class="o">.</span><span class="nf">getAllDynamicPaymentNetworkSpecificTags</span><span class="p">()</span><span class="o">!</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"testSamplePushPaymentData = </span><span class="se">\(</span><span class="n">str01</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">arr</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="k">try!</span> <span class="n">pushPaymentData</span><span class="o">.</span><span class="nf">setMAIDataForTagString</span><span class="p">(</span><span class="n">rootTag</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">maiData</span><span class="p">)</span>
+
+    <span class="c1">// Merchant category code</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantCategoryCode</span> <span class="o">=</span> <span class="s">"1434"</span>
+
+    <span class="c1">// Transaction currency code</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">transactionCurrencyCode</span> <span class="o">=</span> <span class="s">"156"</span>
+
+    <span class="c1">// Transaction amount</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">transactionAmount</span> <span class="o">=</span> <span class="s">"83.80"</span>
+
+    <span class="k">let</span> <span class="nv">tipType</span> <span class="o">=</span> <span class="kt">TipConvenienceIndicator</span><span class="o">.</span><span class="n">percentageConvenienceFee</span>
+    <span class="k">switch</span> <span class="n">tipType</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">promptedToEnterTip</span><span class="p">:</span>
+        <span class="c1">// Tip or convenience indicator</span>
+        <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">tipOrConvenienceIndicator</span> <span class="o">=</span> <span class="s">"01"</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">flatConvenienceFee</span><span class="p">:</span>
+        <span class="c1">// Tip or convenience indicator</span>
+        <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">tipOrConvenienceIndicator</span> <span class="o">=</span> <span class="s">"02"</span>
+        <span class="c1">// Value of convenience fee fixed</span>
+        <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">valueOfConvenienceFeeFixed</span> <span class="o">=</span> <span class="s">"10"</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">percentageConvenienceFee</span><span class="p">:</span>
+        <span class="c1">// Tip or convenience indicator</span>
+        <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">tipOrConvenienceIndicator</span> <span class="o">=</span> <span class="s">"03"</span>
+        <span class="c1">// Value of convenience fee percentage</span>
+        <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">valueOfConvenienceFeePercentage</span> <span class="o">=</span> <span class="s">"5"</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">unknownTipConvenienceIndicator</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"do nothing"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Country code</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">countryCode</span> <span class="o">=</span> <span class="s">"CN"</span>
+
+    <span class="c1">// Merchant name</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantName</span> <span class="o">=</span> <span class="s">"BEST TRANSPORT"</span>
+
+    <span class="c1">// Merchant city</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">merchantCity</span> <span class="o">=</span> <span class="s">"BEIJING"</span>
+
+    <span class="c1">// Postal code</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">postalCode</span> <span class="o">=</span> <span class="s">"56748"</span>
+
+
+    <span class="c1">// Additional data</span>
+    <span class="k">let</span> <span class="nv">addData</span> <span class="o">=</span> <span class="kt">AdditionalData</span><span class="p">()</span>
+    <span class="n">addData</span><span class="o">.</span><span class="n">storeId</span> <span class="o">=</span> <span class="s">"A6008"</span>
+    <span class="n">addData</span><span class="o">.</span><span class="n">loyaltyNumber</span> <span class="o">=</span> <span class="s">"***"</span>
+    <span class="n">addData</span><span class="o">.</span><span class="n">terminalId</span> <span class="o">=</span> <span class="s">"A6008667"</span>
+    <span class="n">addData</span><span class="o">.</span><span class="n">additionalConsumerDataRequest</span> <span class="o">=</span> <span class="s">"ME"</span>
+
+    <span class="k">var</span> <span class="nv">rootSubTag</span> <span class="o">=</span> <span class="s">"50"</span>
+    <span class="k">var</span> <span class="nv">additionalUnrestrictedData</span> <span class="o">=</span> <span class="kt">UnrestrictedData</span><span class="p">()</span>
+    <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">setRootTag</span><span class="p">(</span><span class="n">rootSubTag</span><span class="p">)</span>
+    <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="kt">AID</span> <span class="o">=</span> <span class="s">"GUI123"</span>
+    <span class="k">try!</span> <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">setContextSpecific</span><span class="p">(</span><span class="s">"CONT"</span><span class="p">,</span> <span class="nv">forTag</span><span class="p">:</span> <span class="s">"01"</span><span class="p">)</span>
+    <span class="k">try!</span> <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">setDynamicContextSpecific</span><span class="p">(</span><span class="s">"DYN6"</span><span class="p">)</span>
+    <span class="n">str01</span> <span class="o">=</span> <span class="k">try</span><span class="o">!</span><span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">getContextSpecificData</span><span class="p">(</span><span class="nv">forTag</span><span class="p">:</span> <span class="s">"01"</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">getAllDynamicContextSpecificDataTags</span><span class="p">()</span><span class="o">!</span>
+    <span class="k">try!</span> <span class="n">addData</span><span class="o">.</span><span class="nf">setUnreserved</span><span class="p">(</span><span class="n">additionalUnrestrictedData</span><span class="p">,</span> <span class="nv">forTag</span><span class="p">:</span> <span class="n">rootSubTag</span><span class="p">)</span>
+
+    <span class="n">rootSubTag</span> <span class="o">=</span> <span class="s">"51"</span>
+    <span class="n">additionalUnrestrictedData</span> <span class="o">=</span> <span class="kt">UnrestrictedData</span><span class="p">()</span>
+    <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="kt">AID</span> <span class="o">=</span> <span class="s">"GUI2"</span>
+    <span class="k">try!</span> <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">setContextSpecific</span><span class="p">(</span><span class="s">"CON"</span><span class="p">,</span> <span class="nv">forTag</span><span class="p">:</span> <span class="s">"01"</span><span class="p">)</span>
+    <span class="k">try!</span> <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">setDynamicContextSpecific</span><span class="p">(</span><span class="s">"DYN22"</span><span class="p">)</span>
+    <span class="n">str01</span> <span class="o">=</span> <span class="k">try</span><span class="o">!</span><span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">getContextSpecificData</span><span class="p">(</span><span class="nv">forTag</span><span class="p">:</span> <span class="s">"01"</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">additionalUnrestrictedData</span><span class="o">.</span><span class="nf">getAllDynamicContextSpecificDataTags</span><span class="p">()</span><span class="o">!</span>
+    <span class="k">try!</span> <span class="n">addData</span><span class="o">.</span><span class="nf">setDynamicTag</span><span class="p">(</span><span class="n">additionalUnrestrictedData</span><span class="p">)</span>
+
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">additionalData</span> <span class="o">=</span> <span class="n">addData</span>
+
+    <span class="c1">// CRC</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">crc</span> <span class="o">=</span> <span class="s">"6403"</span>
+
+    <span class="c1">// Language Data</span>
+    <span class="k">let</span> <span class="nv">langData</span> <span class="o">=</span> <span class="kt">LanguageData</span><span class="p">()</span>
+    <span class="n">langData</span><span class="o">.</span><span class="n">languagePreference</span> <span class="o">=</span> <span class="s">"ZH"</span>
+    <span class="n">langData</span><span class="o">.</span><span class="n">alternateMerchantCity</span> <span class="o">=</span> <span class="s">"北京"</span>
+    <span class="n">langData</span><span class="o">.</span><span class="n">alternateMerchantName</span> <span class="o">=</span> <span class="s">"最佳运输"</span>
+    <span class="n">pushPaymentData</span><span class="o">.</span><span class="n">languageData</span> <span class="o">=</span> <span class="n">langData</span>
+
+    <span class="c1">//unrestricted data</span>
+    <span class="n">rootTag</span> <span class="o">=</span> <span class="s">"88"</span>
+    <span class="k">let</span> <span class="nv">unrestrictedData</span> <span class="o">=</span> <span class="kt">UnrestrictedData</span><span class="p">()</span>
+    <span class="n">unrestrictedData</span><span class="o">.</span><span class="nf">setRootTag</span><span class="p">(</span><span class="n">rootTag</span><span class="p">)</span>
+    <span class="n">unrestrictedData</span><span class="o">.</span><span class="kt">AID</span> <span class="o">=</span> <span class="s">"GUI12319494"</span>
+    <span class="k">try!</span> <span class="n">unrestrictedData</span><span class="o">.</span><span class="nf">setContextSpecific</span><span class="p">(</span><span class="s">"CONT7586F"</span><span class="p">,</span> <span class="nv">forTag</span><span class="p">:</span> <span class="s">"01"</span><span class="p">)</span>
+    <span class="k">try!</span> <span class="n">unrestrictedData</span><span class="o">.</span><span class="nf">setDynamicContextSpecific</span><span class="p">(</span><span class="s">"DYN647382"</span><span class="p">)</span>
+    <span class="n">str01</span> <span class="o">=</span> <span class="k">try</span><span class="o">!</span><span class="n">unrestrictedData</span><span class="o">.</span><span class="nf">getContextSpecificData</span><span class="p">(</span><span class="nv">forTag</span><span class="p">:</span> <span class="s">"01"</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">unrestrictedData</span><span class="o">.</span><span class="nf">getAllDynamicContextSpecificDataTags</span><span class="p">()</span><span class="o">!</span>
+    <span class="k">try!</span> <span class="n">pushPaymentData</span><span class="o">.</span><span class="nf">setUnreservedDataForTagString</span><span class="p">(</span><span class="n">rootTag</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">unrestrictedData</span><span class="p">)</span>
+
     <span class="k">var</span> <span class="nv">ppdString</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span>
     <span class="k">do</span> <span class="p">{</span>
         <span class="c1">// Validate generated data</span>
@@ -300,9 +461,166 @@
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">generatePushPaymentQR</span> <span class="p">{</span>
     <span class="c1">// Generate
 </span>    <span class="n">PushPaymentData</span> <span class="o">*</span><span class="n">pushPaymentData</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PushPaymentData</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+
     <span class="c1">// Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = @"01"
 </span>
-    <span class="n">MPQRError</span> <span class="o">*</span><span class="n">error</span><span class="p">;</span>
+    <span class="c1">// Payload format indicator
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">payloadFormatIndicator</span> <span class="o">=</span> <span class="s">@"01"</span><span class="p">;</span>
+
+    <span class="c1">// Point of initiation method
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">pointOfInitiationMethod</span> <span class="o">=</span> <span class="s">@"12"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant identifier Visa with tag `02`
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierVisa02</span> <span class="o">=</span> <span class="s">@"4600678934521435"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant identifier Visa with tag `03`
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierVisa03</span> <span class="o">=</span> <span class="s">@"4600678934521467"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant identifier MasterCard with tag `04`
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierMastercard04</span> <span class="o">=</span> <span class="s">@"555544443333111"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant identifier MasterCard with tag `05`
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierMastercard05</span> <span class="o">=</span> <span class="s">@"555544443333222"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant identifier NPCI with tag `06`
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierNPCI06</span> <span class="o">=</span> <span class="s">@"5600678934521435"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant identifier NPCI with tag `07`
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierNPCI07</span> <span class="o">=</span> <span class="s">@"5600678934521459"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (EMVCo)IFSCCode
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierIFSCCODE08</span> <span class="o">=</span> <span class="s">@"6800678934521565"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (Discover)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierDISCOVER09</span> <span class="o">=</span> <span class="s">@"7800678934521675"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (Discover)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierDISCOVER10</span> <span class="o">=</span> <span class="s">@"7900678934521655"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (Amex)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierAMEX11</span> <span class="o">=</span> <span class="s">@"3200678934521434"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (Amex)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierAMEX12</span> <span class="o">=</span> <span class="s">@"3400678934521469"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (JCB)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierJCB13</span> <span class="o">=</span> <span class="s">@"5700678934521457"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (JCB)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierJCB14</span> <span class="o">=</span> <span class="s">@"5800678934521435"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (UnionPay)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierUNIONPAY15</span> <span class="o">=</span> <span class="s">@"5800678934524535"</span><span class="p">;</span>
+
+    <span class="c1">//Merchant identifier (UnionPay)
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantIdentifierUNIONPAY16</span> <span class="o">=</span> <span class="s">@"4850678934521598"</span><span class="p">;</span>
+
+    <span class="c1">//17 - 25 for merchant identifier EMVCO
+</span>    <span class="n">MPQRError</span><span class="o">*</span> <span class="n">error</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">pushPaymentData</span> <span class="nf">setMerchantIdentifierEMVCODataForTagString</span><span class="p">:</span><span class="s">@"17"</span> <span class="nf">data</span><span class="p">:</span><span class="s">@"4657678934521449"</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+
+    <span class="c1">//Merchant Identifier data 26-51
+</span>    <span class="n">MAIData</span><span class="o">*</span> <span class="n">maiData</span> <span class="o">=</span> <span class="p">[</span><span class="n">MAIData</span> <span class="nf">new</span><span class="p">];</span>
+    <span class="n">NSString</span><span class="o">*</span> <span class="n">rootTag</span> <span class="o">=</span> <span class="s">@"26"</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">maiData</span> <span class="nf">setRootTag</span><span class="p">:</span><span class="n">rootTag</span><span class="p">];</span>
+    <span class="n">maiData</span><span class="p">.</span><span class="n">AID</span> <span class="o">=</span> <span class="s">@"AID0349509H"</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">maiData</span> <span class="nf">setPaymentNetworkSpecific</span><span class="p">:</span><span class="s">@"PNS93484jf"</span> <span class="nf">forTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">maiData</span> <span class="nf">setDynamicPaymentNetworkSpecific</span><span class="p">:</span><span class="s">@"PNSDyn8494738"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">NSString</span><span class="o">*</span> <span class="n">strValue01</span> <span class="o">=</span> <span class="p">[</span><span class="n">maiData</span> <span class="nf">getPaymentNetworkSpecificForTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">NSArray</span><span class="o">*</span> <span class="n">arrTags</span> <span class="o">=</span> <span class="p">[</span><span class="n">maiData</span> <span class="nf">getAllDynamicPaymentNetworkSpecificTags</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">pushPaymentData</span> <span class="nf">setMAIDataForTagString</span><span class="p">:</span><span class="n">rootTag</span> <span class="nf">data</span><span class="p">:</span><span class="n">maiData</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+
+    <span class="c1">// Merchant category code
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantCategoryCode</span> <span class="o">=</span> <span class="s">@"1434"</span><span class="p">;</span>
+
+    <span class="c1">// Transaction currency code
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">transactionCurrencyCode</span> <span class="o">=</span> <span class="s">@"156"</span><span class="p">;</span>
+
+    <span class="c1">// Transaction amount
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">transactionAmount</span> <span class="o">=</span> <span class="s">@"83.80"</span><span class="p">;</span>
+
+    <span class="n">TipConvenienceIndicator</span> <span class="n">tipType</span> <span class="o">=</span> <span class="n">percentageConvenienceFee</span><span class="p">;</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">tipType</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">promptedToEnterTip</span><span class="p">:</span>
+            <span class="c1">// Tip or convenience indicator
+</span>            <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">tipOrConvenienceIndicator</span> <span class="o">=</span> <span class="s">@"01"</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">flatConvenienceFee</span><span class="p">:</span>
+            <span class="c1">// Tip or convenience indicator
+</span>            <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">tipOrConvenienceIndicator</span> <span class="o">=</span> <span class="s">@"02"</span><span class="p">;</span>
+            <span class="c1">// Value of convenience fee fixed
+</span>            <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">valueOfConvenienceFeeFixed</span><span class="o">=</span> <span class="s">@"10"</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">percentageConvenienceFee</span><span class="p">:</span>
+            <span class="c1">// Tip or convenience indicator
+</span>            <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">tipOrConvenienceIndicator</span> <span class="o">=</span> <span class="s">@"03"</span><span class="p">;</span>
+            <span class="c1">// Value of convenience fee percentage
+</span>            <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">valueOfConvenienceFeePercentage</span> <span class="o">=</span> <span class="s">@"5"</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Country code
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">countryCode</span> <span class="o">=</span> <span class="s">@"CN"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant name
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantName</span> <span class="o">=</span> <span class="s">@"BEST TRANSPORT"</span><span class="p">;</span>
+
+    <span class="c1">// Merchant city
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">merchantCity</span> <span class="o">=</span> <span class="s">@"BEIJING"</span><span class="p">;</span>
+
+    <span class="c1">// Postal code
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">postalCode</span> <span class="o">=</span> <span class="s">@"56748"</span><span class="p">;</span>
+
+    <span class="c1">// Additional data
+</span>    <span class="n">AdditionalData</span><span class="o">*</span> <span class="n">addData</span> <span class="o">=</span> <span class="p">[</span><span class="n">AdditionalData</span> <span class="nf">new</span><span class="p">];</span>
+    <span class="n">addData</span><span class="p">.</span><span class="n">storeId</span> <span class="o">=</span> <span class="s">@"A6008"</span><span class="p">;</span>
+    <span class="n">addData</span><span class="p">.</span><span class="n">loyaltyNumber</span> <span class="o">=</span> <span class="s">@"***"</span><span class="p">;</span>
+    <span class="n">addData</span><span class="p">.</span><span class="n">terminalId</span> <span class="o">=</span> <span class="s">@"A6008667"</span><span class="p">;</span>
+    <span class="n">addData</span><span class="p">.</span><span class="n">additionalConsumerDataRequest</span> <span class="o">=</span> <span class="s">@"ME"</span><span class="p">;</span>
+
+    <span class="n">NSString</span><span class="o">*</span> <span class="n">rootSubTag</span> <span class="o">=</span> <span class="s">@"50"</span><span class="p">;</span>
+    <span class="n">UnrestrictedData</span><span class="o">*</span> <span class="n">additionalUnrestrictedData</span> <span class="o">=</span> <span class="p">[</span><span class="n">UnrestrictedData</span> <span class="nf">new</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">setRootTag</span><span class="p">:</span><span class="n">rootSubTag</span><span class="p">];</span>
+    <span class="n">additionalUnrestrictedData</span><span class="p">.</span><span class="n">AID</span> <span class="o">=</span> <span class="s">@"GUI123"</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">setContextSpecificData</span><span class="p">:</span><span class="s">@"CONT"</span> <span class="nf">forTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">setDynamicContextSpecificData</span><span class="p">:</span><span class="s">@"DYN6"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">strValue01</span> <span class="o">=</span> <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">getContextSpecificDataForTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">arrTags</span> <span class="o">=</span> <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">getAllDynamicContextSpecificDataTags</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">addData</span> <span class="nf">setUnreservedData</span><span class="p">:</span><span class="n">additionalUnrestrictedData</span> <span class="nf">forTag</span><span class="p">:</span><span class="n">rootSubTag</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+
+    <span class="n">rootSubTag</span> <span class="o">=</span> <span class="s">@"51"</span><span class="p">;</span>
+    <span class="n">additionalUnrestrictedData</span> <span class="o">=</span> <span class="p">[</span><span class="n">UnrestrictedData</span> <span class="nf">new</span><span class="p">];</span>
+    <span class="n">additionalUnrestrictedData</span><span class="p">.</span><span class="n">AID</span> <span class="o">=</span> <span class="s">@"GUI2"</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">setContextSpecificData</span><span class="p">:</span><span class="s">@"CON"</span> <span class="nf">forTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">setDynamicContextSpecificData</span><span class="p">:</span><span class="s">@"DYN22"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">strValue01</span> <span class="o">=</span> <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">getContextSpecificDataForTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">arrTags</span> <span class="o">=</span> <span class="p">[</span><span class="n">additionalUnrestrictedData</span> <span class="nf">getAllDynamicContextSpecificDataTags</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">addData</span> <span class="nf">setDynamicTag</span><span class="p">:</span><span class="n">additionalUnrestrictedData</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+
+    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">additionalData</span> <span class="o">=</span> <span class="n">addData</span><span class="p">;</span>
+
+    <span class="c1">// CRC
+</span>    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">crc</span> <span class="o">=</span> <span class="s">@"6403"</span><span class="p">;</span>
+
+    <span class="c1">// Language Data
+</span>    <span class="n">LanguageData</span><span class="o">*</span> <span class="n">langData</span> <span class="o">=</span> <span class="p">[</span><span class="n">LanguageData</span> <span class="nf">new</span><span class="p">];</span>
+    <span class="n">langData</span><span class="p">.</span><span class="n">languagePreference</span> <span class="o">=</span> <span class="s">@"ZH"</span><span class="p">;</span>
+    <span class="n">langData</span><span class="p">.</span><span class="n">alternateMerchantCity</span> <span class="o">=</span> <span class="s">@"北京"</span><span class="p">;</span>
+    <span class="n">langData</span><span class="p">.</span><span class="n">alternateMerchantName</span> <span class="o">=</span> <span class="s">@"最佳运输"</span><span class="p">;</span>
+    <span class="n">pushPaymentData</span><span class="p">.</span><span class="n">languageData</span> <span class="o">=</span> <span class="n">langData</span><span class="p">;</span>
+
+    <span class="c1">//unrestricted data
+</span>    <span class="n">rootTag</span> <span class="o">=</span> <span class="s">@"88"</span><span class="p">;</span>
+    <span class="n">UnrestrictedData</span><span class="o">*</span> <span class="n">unrestrictedData</span> <span class="o">=</span> <span class="p">[</span><span class="n">UnrestrictedData</span> <span class="nf">new</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">unrestrictedData</span> <span class="nf">setRootTag</span><span class="p">:</span><span class="n">rootTag</span><span class="p">];</span>
+    <span class="n">unrestrictedData</span><span class="p">.</span><span class="n">AID</span> <span class="o">=</span> <span class="s">@"GUI12319494"</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">unrestrictedData</span> <span class="nf">setContextSpecificData</span><span class="p">:</span><span class="s">@"CONT7586F"</span> <span class="nf">forTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">unrestrictedData</span> <span class="nf">setDynamicContextSpecificData</span><span class="p">:</span><span class="s">@"DYN647382"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">strValue01</span> <span class="o">=</span> <span class="p">[</span><span class="n">unrestrictedData</span> <span class="nf">getContextSpecificDataForTag</span><span class="p">:</span><span class="s">@"01"</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    <span class="n">arrTags</span> <span class="o">=</span> <span class="p">[</span><span class="n">unrestrictedData</span> <span class="nf">getAllDynamicContextSpecificDataTags</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">pushPaymentData</span> <span class="nf">setTagInfoValue</span><span class="p">:</span><span class="n">unrestrictedData</span> <span class="nf">forTagString</span><span class="p">:</span><span class="n">rootTag</span> <span class="n">error</span><span class="o">:&amp;</span><span class="n">error</span><span class="p">];</span>
+
     <span class="n">NSString</span><span class="o">*</span> <span class="n">strQRCode</span> <span class="o">=</span> <span class="p">[</span><span class="n">pushPaymentData</span> <span class="nf">generatePushPaymentString</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
@@ -321,7 +639,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.0)</p>
+      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.4)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
