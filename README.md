@@ -16,6 +16,9 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 1. Capabilities to parse and validate Push Payment QR code string.
 2. Generate Push Payment QR code string.
 
+### Documentation
+The code documentation can be found on Github link [here][3].
+
 ### Installation
 
 #### Cocoapods
@@ -45,7 +48,8 @@ _This sdk only deals with actual QR code strings. So you need to use a separate 
 - Follow same instructions as Swift
 
 [1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
-[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.3/masterpassqrcoresdk-framework-ios.zip
+[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.4/masterpassqrcoresdk-framework-ios.zip
+[3]: https://mastercard.github.io/masterpass-qr-core-sdk-ios
 
 ### Usage
 
@@ -116,7 +120,7 @@ func generateQRCode(from string: String) -> UIImage? {
         // Set scale according to your device display. If the qr code is blurry then increase scale
         let transform = CGAffineTransform(scaleX: 3, y: 3)
 
-        if let output = filter.outputImage?.transformed(by: transform) {
+        if let output = filter.outputImage?.applying(transform) {
             return UIImage(ciImage: output)
         }
     }
@@ -126,7 +130,166 @@ func generateQRCode(from string: String) -> UIImage? {
 func generatePushPaymentQR() {
     // Generate
     let pushPaymentData = PushPaymentData()
+
     // Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = "01"
+
+    // Payload format indicator
+    pushPaymentData.payloadFormatIndicator = "01"
+
+    // Point of initiation method
+    pushPaymentData.pointOfInitiationMethod = "12"
+
+    // Merchant identifier Visa with tag `02`
+    pushPaymentData.merchantIdentifierVisa02 = "4600678934521435"
+
+    // Merchant identifier Visa with tag `03`
+    pushPaymentData.merchantIdentifierVisa03 = "4600678934521467"
+
+    // Merchant identifier MasterCard with tag `04`
+    pushPaymentData.merchantIdentifierMastercard04 = "555544443333111"
+
+    // Merchant identifier MasterCard with tag `05`
+    pushPaymentData.merchantIdentifierMastercard05 = "555544443333222"
+
+    // Merchant identifier NPCI with tag `06`
+    pushPaymentData.merchantIdentifierNPCI06 = "5600678934521435"
+
+    // Merchant identifier NPCI with tag `07`
+    pushPaymentData.merchantIdentifierNPCI07 = "5600678934521459"
+
+    //Merchant identifier (EMVCo)IFSCCode
+    pushPaymentData.merchantIdentifierIFSCCODE08 = "6800678934521565"
+
+    //Merchant identifier (Discover)
+    pushPaymentData.merchantIdentifierDISCOVER09 = "7800678934521675"
+
+    //Merchant identifier (Discover)
+    pushPaymentData.merchantIdentifierDISCOVER10 = "7900678934521655"
+
+    //Merchant identifier (Amex)
+    pushPaymentData.merchantIdentifierAMEX11 = "3200678934521434"
+
+    //Merchant identifier (Amex)
+    pushPaymentData.merchantIdentifierAMEX12 = "3400678934521469"
+
+    //Merchant identifier (JCB)
+    pushPaymentData.merchantIdentifierJCB13 = "5700678934521457"
+
+    //Merchant identifier (JCB)
+    pushPaymentData.merchantIdentifierJCB14 = "5800678934521435"
+
+    //Merchant identifier (UnionPay)
+    pushPaymentData.merchantIdentifierUNIONPAY15 = "5800678934524535"
+
+    //Merchant identifier (UnionPay)
+    pushPaymentData.merchantIdentifierUNIONPAY16 = "4850678934521598"
+
+    //17 - 25 for merchant identifier EMVCO
+    try! pushPaymentData.setMerchantIdentifierEMVCODataForTagString("17", data: "4657678934521449")
+
+
+    //Merchant Identifier data 26-51
+    let maiData = MAIData()
+    var rootTag = "26"
+    maiData.setRootTag(rootTag)
+    maiData.AID = "AID0349509H"
+    try! maiData.setPaymentNetworkSpecific("PNS93484jf", forTag:"01")
+    try! maiData.setDynamicPaymentNetworkSpecific("PNSDyn8494738")
+    var str01 = try!maiData.getPaymentNetworkSpecific(forTag: "01")
+    var arr = maiData.getAllDynamicPaymentNetworkSpecificTags()!
+    print("testSamplePushPaymentData = \(str01) \(arr)")
+    try! pushPaymentData.setMAIDataForTagString(rootTag, data: maiData)
+
+    // Merchant category code
+    pushPaymentData.merchantCategoryCode = "1434"
+
+    // Transaction currency code
+    pushPaymentData.transactionCurrencyCode = "156"
+
+    // Transaction amount
+    pushPaymentData.transactionAmount = "83.80"
+
+    let tipType = TipConvenienceIndicator.percentageConvenienceFee
+    switch tipType {
+    case .promptedToEnterTip:
+        // Tip or convenience indicator
+        pushPaymentData.tipOrConvenienceIndicator = "01"
+    case .flatConvenienceFee:
+        // Tip or convenience indicator
+        pushPaymentData.tipOrConvenienceIndicator = "02"
+        // Value of convenience fee fixed
+        pushPaymentData.valueOfConvenienceFeeFixed = "10"
+    case .percentageConvenienceFee:
+        // Tip or convenience indicator
+        pushPaymentData.tipOrConvenienceIndicator = "03"
+        // Value of convenience fee percentage
+        pushPaymentData.valueOfConvenienceFeePercentage = "5"
+    case .unknownTipConvenienceIndicator:
+        print("do nothing")
+    }
+
+    // Country code
+    pushPaymentData.countryCode = "CN"
+
+    // Merchant name
+    pushPaymentData.merchantName = "BEST TRANSPORT"
+
+    // Merchant city
+    pushPaymentData.merchantCity = "BEIJING"
+
+    // Postal code
+    pushPaymentData.postalCode = "56748"
+
+
+    // Additional data
+    let addData = AdditionalData()
+    addData.storeId = "A6008"
+    addData.loyaltyNumber = "***"
+    addData.terminalId = "A6008667"
+    addData.additionalConsumerDataRequest = "ME"
+
+    var rootSubTag = "50"
+    var additionalUnrestrictedData = UnrestrictedData()
+    additionalUnrestrictedData.setRootTag(rootSubTag)
+    additionalUnrestrictedData.AID = "GUI123"
+    try! additionalUnrestrictedData.setContextSpecific("CONT", forTag: "01")
+    try! additionalUnrestrictedData.setDynamicContextSpecific("DYN6")
+    str01 = try!additionalUnrestrictedData.getContextSpecificData(forTag: "01")
+    arr = additionalUnrestrictedData.getAllDynamicContextSpecificDataTags()!
+    try! addData.setUnreserved(additionalUnrestrictedData, forTag: rootSubTag)
+
+    rootSubTag = "51"
+    additionalUnrestrictedData = UnrestrictedData()
+    additionalUnrestrictedData.AID = "GUI2"
+    try! additionalUnrestrictedData.setContextSpecific("CON", forTag: "01")
+    try! additionalUnrestrictedData.setDynamicContextSpecific("DYN22")
+    str01 = try!additionalUnrestrictedData.getContextSpecificData(forTag: "01")
+    arr = additionalUnrestrictedData.getAllDynamicContextSpecificDataTags()!
+    try! addData.setDynamicTag(additionalUnrestrictedData)
+
+    pushPaymentData.additionalData = addData
+
+    // CRC
+    pushPaymentData.crc = "6403"
+
+    // Language Data
+    let langData = LanguageData()
+    langData.languagePreference = "ZH"
+    langData.alternateMerchantCity = "北京"
+    langData.alternateMerchantName = "最佳运输"
+    pushPaymentData.languageData = langData
+
+    //unrestricted data
+    rootTag = "88"
+    let unrestrictedData = UnrestrictedData()
+    unrestrictedData.setRootTag(rootTag)
+    unrestrictedData.AID = "GUI12319494"
+    try! unrestrictedData.setContextSpecific("CONT7586F", forTag: "01")
+    try! unrestrictedData.setDynamicContextSpecific("DYN647382")
+    str01 = try!unrestrictedData.getContextSpecificData(forTag: "01")
+    arr = unrestrictedData.getAllDynamicContextSpecificDataTags()!
+    try! pushPaymentData.setUnreservedDataForTagString(rootTag, data: unrestrictedData)
+
     var ppdString:String?
     do {
         // Validate generated data
@@ -135,7 +298,7 @@ func generatePushPaymentQR() {
         print("Error occurred during validation \(error)")
         return
     }
-
+    
     // Generate image
     let image = generateQRCode(from: ppdString!)
 }
@@ -161,9 +324,166 @@ __Objective-C__
 - (void)generatePushPaymentQR {
     // Generate
     PushPaymentData *pushPaymentData = [[PushPaymentData alloc] init];
+
     // Set required properties on push payment data e.g pushPaymentData.payloadFormatIndicator = @"01"
 
-    MPQRError *error;
+    // Payload format indicator
+    pushPaymentData.payloadFormatIndicator = @"01";
+
+    // Point of initiation method
+    pushPaymentData.pointOfInitiationMethod = @"12";
+
+    // Merchant identifier Visa with tag `02`
+    pushPaymentData.merchantIdentifierVisa02 = @"4600678934521435";
+
+    // Merchant identifier Visa with tag `03`
+    pushPaymentData.merchantIdentifierVisa03 = @"4600678934521467";
+
+    // Merchant identifier MasterCard with tag `04`
+    pushPaymentData.merchantIdentifierMastercard04 = @"555544443333111";
+
+    // Merchant identifier MasterCard with tag `05`
+    pushPaymentData.merchantIdentifierMastercard05 = @"555544443333222";
+
+    // Merchant identifier NPCI with tag `06`
+    pushPaymentData.merchantIdentifierNPCI06 = @"5600678934521435";
+
+    // Merchant identifier NPCI with tag `07`
+    pushPaymentData.merchantIdentifierNPCI07 = @"5600678934521459";
+
+    //Merchant identifier (EMVCo)IFSCCode
+    pushPaymentData.merchantIdentifierIFSCCODE08 = @"6800678934521565";
+
+    //Merchant identifier (Discover)
+    pushPaymentData.merchantIdentifierDISCOVER09 = @"7800678934521675";
+
+    //Merchant identifier (Discover)
+    pushPaymentData.merchantIdentifierDISCOVER10 = @"7900678934521655";
+
+    //Merchant identifier (Amex)
+    pushPaymentData.merchantIdentifierAMEX11 = @"3200678934521434";
+
+    //Merchant identifier (Amex)
+    pushPaymentData.merchantIdentifierAMEX12 = @"3400678934521469";
+
+    //Merchant identifier (JCB)
+    pushPaymentData.merchantIdentifierJCB13 = @"5700678934521457";
+
+    //Merchant identifier (JCB)
+    pushPaymentData.merchantIdentifierJCB14 = @"5800678934521435";
+
+    //Merchant identifier (UnionPay)
+    pushPaymentData.merchantIdentifierUNIONPAY15 = @"5800678934524535";
+
+    //Merchant identifier (UnionPay)
+    pushPaymentData.merchantIdentifierUNIONPAY16 = @"4850678934521598";
+
+    //17 - 25 for merchant identifier EMVCO
+    MPQRError* error;
+    [pushPaymentData setMerchantIdentifierEMVCODataForTagString:@"17" data:@"4657678934521449" error:&error];
+
+    //Merchant Identifier data 26-51
+    MAIData* maiData = [MAIData new];
+    NSString* rootTag = @"26";
+    [maiData setRootTag:rootTag];
+    maiData.AID = @"AID0349509H";
+    [maiData setPaymentNetworkSpecific:@"PNS93484jf" forTag:@"01" error:&error];
+    [maiData setDynamicPaymentNetworkSpecific:@"PNSDyn8494738" error:&error];
+    NSString* strValue01 = [maiData getPaymentNetworkSpecificForTag:@"01" error:&error];
+    NSArray* arrTags = [maiData getAllDynamicPaymentNetworkSpecificTags];
+    [pushPaymentData setMAIDataForTagString:rootTag data:maiData error:&error];
+
+    // Merchant category code
+    pushPaymentData.merchantCategoryCode = @"1434";
+
+    // Transaction currency code
+    pushPaymentData.transactionCurrencyCode = @"156";
+
+    // Transaction amount
+    pushPaymentData.transactionAmount = @"83.80";
+
+    TipConvenienceIndicator tipType = percentageConvenienceFee;
+    switch (tipType) {
+        case promptedToEnterTip:
+            // Tip or convenience indicator
+            pushPaymentData.tipOrConvenienceIndicator = @"01";
+            break;
+        case flatConvenienceFee:
+            // Tip or convenience indicator
+            pushPaymentData.tipOrConvenienceIndicator = @"02";
+            // Value of convenience fee fixed
+            pushPaymentData.valueOfConvenienceFeeFixed= @"10";
+            break;
+        case percentageConvenienceFee:
+            // Tip or convenience indicator
+            pushPaymentData.tipOrConvenienceIndicator = @"03";
+            // Value of convenience fee percentage
+            pushPaymentData.valueOfConvenienceFeePercentage = @"5";
+        default:
+            break;
+    }
+
+    // Country code
+    pushPaymentData.countryCode = @"CN";
+
+    // Merchant name
+    pushPaymentData.merchantName = @"BEST TRANSPORT";
+
+    // Merchant city
+    pushPaymentData.merchantCity = @"BEIJING";
+
+    // Postal code
+    pushPaymentData.postalCode = @"56748";
+
+    // Additional data
+    AdditionalData* addData = [AdditionalData new];
+    addData.storeId = @"A6008";
+    addData.loyaltyNumber = @"***";
+    addData.terminalId = @"A6008667";
+    addData.additionalConsumerDataRequest = @"ME";
+
+    NSString* rootSubTag = @"50";
+    UnrestrictedData* additionalUnrestrictedData = [UnrestrictedData new];
+    [additionalUnrestrictedData setRootTag:rootSubTag];
+    additionalUnrestrictedData.AID = @"GUI123";
+    [additionalUnrestrictedData setContextSpecificData:@"CONT" forTag:@"01" error:&error];
+    [additionalUnrestrictedData setDynamicContextSpecificData:@"DYN6" error:&error];
+    strValue01 = [additionalUnrestrictedData getContextSpecificDataForTag:@"01" error:&error];
+    arrTags = [additionalUnrestrictedData getAllDynamicContextSpecificDataTags];
+    [addData setUnreservedData:additionalUnrestrictedData forTag:rootSubTag error:&error];
+
+    rootSubTag = @"51";
+    additionalUnrestrictedData = [UnrestrictedData new];
+    additionalUnrestrictedData.AID = @"GUI2";
+    [additionalUnrestrictedData setContextSpecificData:@"CON" forTag:@"01" error:&error];
+    [additionalUnrestrictedData setDynamicContextSpecificData:@"DYN22" error:&error];
+    strValue01 = [additionalUnrestrictedData getContextSpecificDataForTag:@"01" error:&error];
+    arrTags = [additionalUnrestrictedData getAllDynamicContextSpecificDataTags];
+    [addData setDynamicTag:additionalUnrestrictedData error:&error];
+
+    pushPaymentData.additionalData = addData;
+
+    // CRC
+    pushPaymentData.crc = @"6403";
+
+    // Language Data
+    LanguageData* langData = [LanguageData new];
+    langData.languagePreference = @"ZH";
+    langData.alternateMerchantCity = @"北京";
+    langData.alternateMerchantName = @"最佳运输";
+    pushPaymentData.languageData = langData;
+
+    //unrestricted data
+    rootTag = @"88";
+    UnrestrictedData* unrestrictedData = [UnrestrictedData new];
+    [unrestrictedData setRootTag:rootTag];
+    unrestrictedData.AID = @"GUI12319494";
+    [unrestrictedData setContextSpecificData:@"CONT7586F" forTag:@"01" error:&error];
+    [unrestrictedData setDynamicContextSpecificData:@"DYN647382" error:&error];
+    strValue01 = [unrestrictedData getContextSpecificDataForTag:@"01" error:&error];
+    arrTags = [unrestrictedData getAllDynamicContextSpecificDataTags];
+    [pushPaymentData setTagInfoValue:unrestrictedData forTagString:rootTag error:&error];
+
     NSString* strQRCode = [pushPaymentData generatePushPaymentString:&error];
 
     if (error) {
