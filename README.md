@@ -120,7 +120,7 @@ func generateQRCode(from string: String) -> UIImage? {
         // Set scale according to your device display. If the qr code is blurry then increase scale
         let transform = CGAffineTransform(scaleX: 3, y: 3)
 
-        if let output = filter.outputImage?.applying(transform) {
+        if let output = filter.outputImage?.transformed(by: transform) {
             return UIImage(ciImage: output)
         }
     }
@@ -298,7 +298,7 @@ func generatePushPaymentQR() {
         print("Error occurred during validation \(error)")
         return
     }
-    
+
     // Generate image
     let image = generateQRCode(from: ppdString!)
 }
