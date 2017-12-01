@@ -259,7 +259,7 @@
         <span class="c1">// Set scale according to your device display. If the qr code is blurry then increase scale</span>
         <span class="k">let</span> <span class="nv">transform</span> <span class="o">=</span> <span class="kt">CGAffineTransform</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="k">let</span> <span class="nv">output</span> <span class="o">=</span> <span class="n">filter</span><span class="o">.</span><span class="n">outputImage</span><span class="p">?</span><span class="o">.</span><span class="nf">applying</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">output</span> <span class="o">=</span> <span class="n">filter</span><span class="o">.</span><span class="n">outputImage</span><span class="p">?</span><span class="o">.</span><span class="nf">transformed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">transform</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">ciImage</span><span class="p">:</span> <span class="n">output</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
