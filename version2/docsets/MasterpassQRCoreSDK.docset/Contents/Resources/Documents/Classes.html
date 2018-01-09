@@ -61,7 +61,16 @@
                 <a class="nav-group-task-link" href="Classes/AbstractData.html">AbstractData</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/AdditionalData.html">AdditionalData</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/AdditionalDataTag.html">AdditionalDataTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ChecksumUtility.html">ChecksumUtility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ClassTipConvenienceIndicator.html">ClassTipConvenienceIndicator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/CurrencyEnumLookup.html">CurrencyEnumLookup</a>
@@ -79,6 +88,9 @@
                 <a class="nav-group-task-link" href="Classes/MPQRError.html">MPQRError</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MPQRParser.html">MPQRParser</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/PPTag.html">PPTag</a>
               </li>
               <li class="nav-group-task">
@@ -91,6 +103,9 @@
                 <a class="nav-group-task-link" href="Classes/TagInfo.html">TagInfo</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TagUtility.html">TagUtility</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/TemplateData.html">TemplateData</a>
               </li>
               <li class="nav-group-task">
@@ -98,6 +113,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/UnrestrictedData.html">UnrestrictedData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ValidationUtil.html">ValidationUtil</a>
               </li>
             </ul>
           </li>
@@ -172,12 +190,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">MPQRError</span> <span class="p">:</span> <span class="nc">NSError</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MPQRError</span> <span class="p">:</span> <span class="nc">NSError</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MPQRError</span> <span class="p">:</span> <span class="kt">NSError</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MPQRError</span> <span class="p">:</span> <span class="kt">NSError</span></code></pre>
 
                         </div>
                       </div>
@@ -201,7 +219,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Abstract class <code>AbstractDataModel</code> is the root of Data hierarchy, containing the basic common functions applicable to all Data classes. All Data classes will have <code>AbstractDataModel</code> as its superclass.</p>
+                        <p>Abstract class <code>AbstractData</code> model is the root of Data hierarchy, containing the basic common functions applicable to all Data classes. All Data classes will have <code>AbstractData</code> model as its superclass.</p>
 
                         <a href="Classes/AbstractData.html" class="slightly-smaller">See more</a>
                       </div>
@@ -209,14 +227,51 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">AbstractData</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">AbstractData</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
   <span class="n">NSMutableDictionary</span><span class="o">&lt;</span><span class="n"><a href="Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="p">,</span> <span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">map</span><span class="p">;</span>
 <span class="p">}</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AbstractData</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AbstractData</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AdditionalData"></a>
+                    <a name="//apple_ref/objc/Class/AdditionalData" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AdditionalData">AdditionalData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Additional Data Field: Additional information beyond basic may be required in certain cases. This information may be either presented by the merchant or acquirer or the Consumer may be prompted for entry on the app. For consumer prompt, the value field of Tag would be 3 asterisks i.e. ***.</p>
+
+                        <a href="Classes/AdditionalData.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">AdditionalData</span> <span class="p">:</span> <span class="nc"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AdditionalData</span> <span class="p">:</span> <span class="kt"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -248,12 +303,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">LanguageData</span> <span class="p">:</span> <span class="nc"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">LanguageData</span> <span class="p">:</span> <span class="nc"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">LanguageData</span> <span class="p">:</span> <span class="kt"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">LanguageData</span> <span class="p">:</span> <span class="kt"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -277,7 +332,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>MAIData class is used to store Merchant Application Identifier of Push Payment Data (tags 26-51).</p>
+                        <p>MAIData class is used to store Merchant Account Information of Push Payment Data (tags 26-51).</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     To assign Application Identifier (tag 00), use AID property from TemplateData class.
@@ -290,12 +345,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">MAIData</span> <span class="p">:</span> <span class="nc"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MAIData</span> <span class="p">:</span> <span class="nc"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MAIData</span> <span class="p">:</span> <span class="kt"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MAIData</span> <span class="p">:</span> <span class="kt"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -327,14 +382,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">PushPaymentData</span> <span class="p">:</span> <span class="nc"><a href="Classes/AbstractData.html">AbstractData</a></span> <span class="p">{</span>
-  <span class="n">NSString</span> <span class="o">*</span><span class="n">dynamicPOISuffix</span><span class="p">;</span>
-<span class="p">}</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">PushPaymentData</span> <span class="p">:</span> <span class="nc"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">PushPaymentData</span> <span class="p">:</span> <span class="kt"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PushPaymentData</span> <span class="p">:</span> <span class="kt"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -366,12 +419,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TemplateData</span> <span class="p">:</span> <span class="nc"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">TemplateData</span> <span class="p">:</span> <span class="nc"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">TemplateData</span> <span class="p">:</span> <span class="kt"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">TemplateData</span> <span class="p">:</span> <span class="kt"><a href="Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -395,8 +448,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class is to store Unreserved Template Data of Push Payment Data tags 80-99.
-This class is to store Unreserved Template Data of Additional Data tags 50-99.</p>
+                        <p>This class is to store Unreserved Template Data of Push Payment Data tags 80-99 and to store Unreserved Template Data of Additional Data tags 50-99.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     To assign Application Identifier (tag 00), use AID property from TemplateData class.
@@ -409,12 +461,55 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">UnrestrictedData</span> <span class="p">:</span> <span class="nc"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">UnrestrictedData</span> <span class="p">:</span> <span class="nc"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">UnrestrictedData</span> <span class="p">:</span> <span class="kt"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UnrestrictedData</span> <span class="p">:</span> <span class="kt"><a href="Classes/TemplateData.html">TemplateData</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MPQRParser"></a>
+                    <a name="//apple_ref/objc/Class/MPQRParser" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MPQRParser">MPQRParser</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Primary interface of the framework.
+This class provide interface to parse the QRCode string to structured data, i.e. <code><a href="Classes/PushPaymentData.html">PushPaymentData</a></code>.</p>
+
+<ul>
+<li>It has <code><a href="Classes/MPQRParser.html#/c:objc(cs)MPQRParser(cm)parse:error:">+parse:error:</a></code> method that do parsing as well as do validation if the string is compliance with EMVCO standard.</li>
+<li>It also has <code><a href="Classes/MPQRParser.html#/c:objc(cs)MPQRParser(cm)parseWithoutTagValidation:error:">+parseWithoutTagValidation:error:</a></code> and <code><a href="Classes/MPQRParser.html#/c:objc(cs)MPQRParser(cm)parseWithoutTagValidationAndCRC:error:">+parseWithoutTagValidationAndCRC:error:</a></code> to parse the string without validating if the value is compliance with EMVCO standard.</li>
+</ul>
+
+                        <a href="Classes/MPQRParser.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MPQRParser</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MPQRParser</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
@@ -446,12 +541,12 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TLV</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">TLV</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">TLV</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">TLV</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
@@ -483,12 +578,49 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">AdditionalDataTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">AdditionalDataTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AdditionalDataTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AdditionalDataTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CurrencyEnumLookup"></a>
+                    <a name="//apple_ref/objc/Class/CurrencyEnumLookup" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CurrencyEnumLookup">CurrencyEnumLookup</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Look up class to access value and set value for enum <code><a href="Enums.html#/c:@E@CurrencyEnum">CurrencyEnum</a></code>.</p>
+
+                        <a href="Classes/CurrencyEnumLookup.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">CurrencyEnumLookup</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CurrencyEnumLookup</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
@@ -512,7 +644,7 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Class to store language tag associated with LanguadeData</p>
+                        <p>Tag to store language tag associated with LanguadeData</p>
 
                         <a href="Classes/LanguageTag.html" class="slightly-smaller">See more</a>
                       </div>
@@ -520,12 +652,12 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">LanguageTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">LanguageTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">LanguageTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">LanguageTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
 
                         </div>
                       </div>
@@ -557,12 +689,12 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">PPTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">PPTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">PPTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
 
                         </div>
                       </div>
@@ -594,12 +726,12 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TagInfo</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">TagInfo</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">TagInfo</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">TagInfo</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
 
                         </div>
                       </div>
@@ -631,12 +763,12 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TemplateDataTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">TemplateDataTag</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">TemplateDataTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">TemplateDataTag</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Tag</span></code></pre>
 
                         </div>
                       </div>
@@ -650,9 +782,9 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)CurrencyEnumLookup"></a>
-                    <a name="//apple_ref/objc/Class/CurrencyEnumLookup" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)CurrencyEnumLookup">CurrencyEnumLookup</a>
+                    <a name="/c:objc(cs)ClassTipConvenienceIndicator"></a>
+                    <a name="//apple_ref/objc/Class/ClassTipConvenienceIndicator" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ClassTipConvenienceIndicator">ClassTipConvenienceIndicator</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -660,20 +792,136 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Look up class for Currency</p>
+                        <p>Class to access value and set value for enum <code><a href="Enums/TipConvenienceIndicator.html">TipConvenienceIndicator</a></code></p>
 
-                        <a href="Classes/CurrencyEnumLookup.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/ClassTipConvenienceIndicator.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CurrencyEnumLookup</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ClassTipConvenienceIndicator</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">CurrencyEnumLookup</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ClassTipConvenienceIndicator</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ChecksumUtility"></a>
+                    <a name="//apple_ref/objc/Class/ChecksumUtility" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ChecksumUtility">ChecksumUtility</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Utility class to check valid checksum. It includes:</p>
+
+<ul>
+<li>CRC checksum that is being used in EMVCO standard</li>
+<li>Luhn checksum that is being used in Mastercard identifier</li>
+</ul>
+
+                        <a href="Classes/ChecksumUtility.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ChecksumUtility</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ChecksumUtility</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TagUtility"></a>
+                    <a name="//apple_ref/objc/Class/TagUtility" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TagUtility">TagUtility</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Utility class to retrieve <code><a href="Classes/TagInfo.html">TagInfo</a></code> given a tag in string format.</p>
+
+                        <a href="Classes/TagUtility.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">TagUtility</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">TagUtility</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ValidationUtil"></a>
+                    <a name="//apple_ref/objc/Class/ValidationUtil" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ValidationUtil">ValidationUtil</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Utility class to check if tag is a valid tag.</p>
+
+                        <a href="Classes/ValidationUtil.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ValidationUtil</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ValidationUtil</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
@@ -688,8 +936,8 @@ This class is to store Unreserved Template Data of Additional Data tags 50-99.</
       </article>
     </div>
     <section class="footer">
-      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.4)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.5)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

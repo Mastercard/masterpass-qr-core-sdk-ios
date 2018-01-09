@@ -62,7 +62,16 @@
                 <a class="nav-group-task-link" href="../Classes/AbstractData.html">AbstractData</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalData.html">AdditionalData</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/AdditionalDataTag.html">AdditionalDataTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ChecksumUtility.html">ChecksumUtility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ClassTipConvenienceIndicator.html">ClassTipConvenienceIndicator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/CurrencyEnumLookup.html">CurrencyEnumLookup</a>
@@ -80,6 +89,9 @@
                 <a class="nav-group-task-link" href="../Classes/MPQRError.html">MPQRError</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MPQRParser.html">MPQRParser</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/PPTag.html">PPTag</a>
               </li>
               <li class="nav-group-task">
@@ -92,6 +104,9 @@
                 <a class="nav-group-task-link" href="../Classes/TagInfo.html">TagInfo</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TagUtility.html">TagUtility</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/TemplateData.html">TemplateData</a>
               </li>
               <li class="nav-group-task">
@@ -99,6 +114,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/UnrestrictedData.html">UnrestrictedData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ValidationUtil.html">ValidationUtil</a>
               </li>
             </ul>
           </li>
@@ -145,13 +163,13 @@
             <h1>AbstractData</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">AbstractData</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">AbstractData</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
   <span class="n">NSMutableDictionary</span><span class="o">&lt;</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="p">,</span> <span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">map</span><span class="p">;</span>
 <span class="p">}</span></code></pre>
 
                 </div>
               </div>
-            <p>Abstract class <code>AbstractDataModel</code> is the root of Data hierarchy, containing the basic common functions applicable to all Data classes. All Data classes will have <code>AbstractDataModel</code> as its superclass.</p>
+            <p>Abstract class <code>AbstractData</code> model is the root of Data hierarchy, containing the basic common functions applicable to all Data classes. All Data classes will have <code>AbstractData</code> model as its superclass.</p>
 
           </div>
         </section>
@@ -180,7 +198,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="n">NSMutableDictionary</span><span class="o">&lt;</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="p">,</span> <span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">map</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">NSMutableDictionary</span><span class="o">&lt;</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="p">,</span> <span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">map</span></code></pre>
 
                         </div>
                       </div>
@@ -207,12 +225,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">allTags</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">allTags</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">allTags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">allTags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -239,7 +257,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span> <span class="n">tagType</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span> <span class="n">tagType</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
@@ -266,7 +284,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">init</span><span class="p">:(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagType</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">init</span><span class="p">:(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagType</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
@@ -312,7 +330,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">init</span><span class="p">:(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagType</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">init</span><span class="p">:(</span><span class="n">Class</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagType</span>
               <span class="nf">regex</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">regex</span>
             <span class="nf">rootTag</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">rTag</span><span class="p">;</span></code></pre>
 
@@ -384,12 +402,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">hasTagInfoValueFor</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">hasTagInfoValueFor</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">hasTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">hasTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -439,12 +457,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nf">getTagInfoValueFor</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nf">getTagInfoValueFor</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -494,12 +512,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setTagInfoValue</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span> <span class="nf">for</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setTagInfoValue</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span> <span class="nf">for</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setTagInfoValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setTagInfoValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -553,7 +571,7 @@
                         <p>Removes value related to tagInfo</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    This method does nothing if the value is not found for tagInfo
+    <p>This method does nothing if the value is not found for tagInfo</p>
 
 </div>
 
@@ -562,12 +580,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeTagInfoValueFor</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeTagInfoValueFor</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeTagInfoValue</span><span class="p">(</span><span class="k">for</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -613,12 +631,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">tagInfoCount</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">tagInfoCount</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tagInfoCount</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tagInfoCount</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -649,14 +667,14 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nf">getTagInfoValueForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">strTagInfo</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nf">getTagInfoValueForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">strTagInfo</span>
                                       <span class="nf">error</span><span class="p">:</span>
                                           <span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getTagInfoValue</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">strTagInfo</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Any</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getTagInfoValue</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">strTagInfo</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Any</span></code></pre>
 
                         </div>
                       </div>
@@ -706,14 +724,14 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setTagInfoValue</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setTagInfoValue</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
            <span class="nf">forTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">strTagInfo</span>
                   <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setTagInfoValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="n">forTagString</span> <span class="nv">strTagInfo</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setTagInfoValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="n">forTagString</span> <span class="nv">strTagInfo</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -773,7 +791,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setValueInTagRange</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setValueInTagRange</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
                        <span class="nf">low</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">low</span>
                       <span class="nf">high</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">high</span>
                      <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
@@ -781,7 +799,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setValueInTagRange</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">low</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">high</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setValueInTagRange</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">low</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">high</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -851,12 +869,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeValue</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeValue</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagInfo</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -902,12 +920,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setRootTag</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">rootTag</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setRootTag</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">rootTag</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setRootTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">rootTag</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setRootTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">rootTag</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -949,7 +967,12 @@
                         <p>Validate data</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    Throws: <code>MPQRError.missingTag</code> if the value for tag info is <strong>not</strong> present while the tag was <strong>mandatory</strong>. Throws: <code>MPQRError.invalidTagValue</code> If the value doesn&rsquo;t match pattern of the tag. And if the length of string representation of the value is out of [1, 99] range
+    Throws:
+
+<ul>
+<li><code>MPQRError.missingTag</code> if the value for tag info is <strong>not</strong> present while the tag was <strong>mandatory</strong>.</li>
+<li><code>MPQRError.invalidTagValue</code> If the value doesn&rsquo;t match pattern of the tag. And if the length of string representation of the value is out of [1, 99] range</li>
+</ul>
 
 </div>
 
@@ -958,113 +981,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validate</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">err</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validate</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">err</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">validate</span><span class="p">()</span> <span class="k">throws</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)AbstractData(im)description"></a>
-                    <a name="//apple_ref/objc/Method/-description" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)AbstractData(im)description">-description</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>String representation of the data. It will generate a string which is parseable back to data</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="n">description</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">description</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)AbstractData(im)dumpData"></a>
-                    <a name="//apple_ref/objc/Method/-dumpData" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)AbstractData(im)dumpData">-dumpData</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Dump internal data in a string representation
-<em>Useful for debugging purposes</em></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="n">dumpData</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dumpData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>String representation of internal data</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)AbstractData(im)isEqual:"></a>
-                    <a name="//apple_ref/objc/Method/-isEqual:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)AbstractData(im)isEqual:">-isEqual:</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Equality check</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">isEqual</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nv">object</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">isEqual</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validate</span><span class="p">()</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1096,12 +1018,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">checkForRFU</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">checkForRFU</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">checkForRFU</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">checkForRFU</span><span class="p">()</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1128,14 +1050,115 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validateLength</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validateLength</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
                <span class="nf">tagInfo</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tInfo</span>
                  <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">validateLength</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">tagInfo</span> <span class="nv">tInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validateLength</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">tagInfo</span> <span class="nv">tInfo</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)description"></a>
+                    <a name="//apple_ref/objc/Method/-description" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)description">-description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>String representation of the data. It will generate a string which is parseable back to data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="n">description</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">description</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)dumpData"></a>
+                    <a name="//apple_ref/objc/Method/-dumpData" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)dumpData">-dumpData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Dump internal data in a string representation
+<em>Useful for debugging purposes</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="n">dumpData</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dumpData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>String representation of internal data</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)AbstractData(im)isEqual:"></a>
+                    <a name="//apple_ref/objc/Method/-isEqual:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)AbstractData(im)isEqual:">-isEqual:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Equality check</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">isEqual</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nv">object</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isEqual</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -1150,8 +1173,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.4)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.5)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

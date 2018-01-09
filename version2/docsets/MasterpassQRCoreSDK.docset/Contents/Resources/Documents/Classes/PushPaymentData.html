@@ -62,7 +62,16 @@
                 <a class="nav-group-task-link" href="../Classes/AbstractData.html">AbstractData</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AdditionalData.html">AdditionalData</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/AdditionalDataTag.html">AdditionalDataTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ChecksumUtility.html">ChecksumUtility</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ClassTipConvenienceIndicator.html">ClassTipConvenienceIndicator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/CurrencyEnumLookup.html">CurrencyEnumLookup</a>
@@ -80,6 +89,9 @@
                 <a class="nav-group-task-link" href="../Classes/MPQRError.html">MPQRError</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MPQRParser.html">MPQRParser</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/PPTag.html">PPTag</a>
               </li>
               <li class="nav-group-task">
@@ -92,6 +104,9 @@
                 <a class="nav-group-task-link" href="../Classes/TagInfo.html">TagInfo</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TagUtility.html">TagUtility</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/TemplateData.html">TemplateData</a>
               </li>
               <li class="nav-group-task">
@@ -99,6 +114,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/UnrestrictedData.html">UnrestrictedData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ValidationUtil.html">ValidationUtil</a>
               </li>
             </ul>
           </li>
@@ -145,9 +163,7 @@
             <h1>PushPaymentData</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">PushPaymentData</span> <span class="p">:</span> <span class="nc"><a href="../Classes/AbstractData.html">AbstractData</a></span> <span class="p">{</span>
-  <span class="n">NSString</span> <span class="o">*</span><span class="n">dynamicPOISuffix</span><span class="p">;</span>
-<span class="p">}</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">PushPaymentData</span> <span class="p">:</span> <span class="nc"><a href="../Classes/AbstractData.html">AbstractData</a></span></code></pre>
 
                 </div>
               </div>
@@ -163,179 +179,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)PushPaymentData(im)validateMerchantIdentifiers:"></a>
-                    <a name="//apple_ref/objc/Method/-validateMerchantIdentifiers:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)validateMerchantIdentifiers:">-validateMerchantIdentifiers:</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Validate merchant fields</p>
-
-<p>Atleast <code>1</code> field related to merchant identifiers should exist.</p>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    Throws: <code>MPQRError.missingTag</code> exception if the none of the merchant tags is found
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validateMerchantIdentifiers</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">validateMerchantIdentifiers</span><span class="p">()</span> <span class="k">throws</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)PushPaymentData(im)validateTipFields:"></a>
-                    <a name="//apple_ref/objc/Method/-validateTipFields:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)validateTipFields:">-validateTipFields:</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Validate tip fields</p>
-
-<p>Logic for validation is as following:</p>
-
-<ol>
-<li><p>If the <code>tipIndicator</code> tag <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_55_TIP_INDICATOR">PPTag.TAG_55_TIP_INDICATOR</a></code> does not exist then tip fields are <em>valid</em></p></li>
-<li><p>If the <code>tipIndicator</code> is <code><a href="../Enums/TipConvenienceIndicator.html#/c:@E@TipConvenienceIndicator@promptedToEnterTip">TipConvenienceIndicator.promptedToEnterTip</a></code> then it</p></li>
-<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_56_CONVENIENCE_FEE_FIXED">PPTag.TAG_56_CONVENIENCE_FEE_FIXED</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
-<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_57_CONVENIENCE_FEE_PERCENTAGE">PPTag.TAG_57_CONVENIENCE_FEE_PERCENTAGE</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
-<li><p>If the <code>tipIndicator</code> is <code><a href="../Enums/TipConvenienceIndicator.html#/c:@E@TipConvenienceIndicator@flatConvenienceFee">TipConvenienceIndicator.flatConvenienceFee</a></code> then it</p></li>
-<li><p><strong>MUST</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_56_CONVENIENCE_FEE_FIXED">PPTag.TAG_56_CONVENIENCE_FEE_FIXED</a></code> else it throws <code>MPQRError.missingTag</code></p></li>
-<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_57_CONVENIENCE_FEE_PERCENTAGE">PPTag.TAG_57_CONVENIENCE_FEE_PERCENTAGE</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
-<li><p>If the <code>tipIndicator</code> is <code><a href="../Enums/TipConvenienceIndicator.html#/c:@E@TipConvenienceIndicator@percentageConvenienceFee">TipConvenienceIndicator.percentageConvenienceFee</a></code> then it</p></li>
-<li><p><strong>MUST</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_57_CONVENIENCE_FEE_PERCENTAGE">PPTag.TAG_57_CONVENIENCE_FEE_PERCENTAGE</a></code> else it throws <code>MPQRError.missingTag</code></p></li>
-<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_56_CONVENIENCE_FEE_FIXED">PPTag.TAG_56_CONVENIENCE_FEE_FIXED</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
-<li><p>Else tip fields are valid</p></li>
-</ol>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    Throws:
-
-</div>
-<li><code>MPQRError.conflictingTag</code> exception if the tags are conflicting.</li>
-<li><code>MPQRError.missingTag</code> exception if the required tag is missing.</li>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validateTipFields</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">validateTipFields</span><span class="p">()</span> <span class="k">throws</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)PushPaymentData(im)validatePriceField:"></a>
-                    <a name="//apple_ref/objc/Method/-validatePriceField:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)validatePriceField:">-validatePriceField:</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Validate price fields</p>
-
-<p>Logic for validation is as following:</p>
-
-<ol>
-<li><p>If <code><a href="../Classes/PushPaymentData.html#/c:objc(cs)PushPaymentData(py)transactionAmount">transactionAmount</a></code> is <strong>not</strong> present and <code>isDynamic</code> returns true then tag <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_54_TRANSACTION_AMOUNT">PPTag.TAG_54_TRANSACTION_AMOUNT</a></code> is missing and it throws <code>MPQRError.missingTag</code> exception</p></li>
-<li><p>If <code><a href="../Classes/PushPaymentData.html#/c:objc(cs)PushPaymentData(py)transactionAmount">transactionAmount</a></code> <strong>is</strong> present and <code>isDynamic</code> returns false then tag <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_54_TRANSACTION_AMOUNT">PPTag.TAG_54_TRANSACTION_AMOUNT</a></code> is conflicting and it throws <code>MPQRError.conflictingTag</code> exception</p></li>
-<li><p>Else price fields are valid</p></li>
-</ol>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    Throws:
-
-</div>
-<li><code>MPQRError.conflictingTag</code> exception if the tags are conflicting.</li>
-<li><code>MPQRError.missingTag</code> exception if the required tag is missing.</li>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validatePriceField</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">validatePriceField</span><span class="p">()</span> <span class="k">throws</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)PushPaymentData(im)isDynamic"></a>
-                    <a name="//apple_ref/objc/Method/-isDynamic" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)isDynamic">-isDynamic</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Whether the code this data represents is dynamic or not</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isDynamic</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">isDynamic</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:objc(cs)PushPaymentData(im)generatePushPaymentString:"></a>
                     <a name="//apple_ref/objc/Method/-generatePushPaymentString:" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)PushPaymentData(im)generatePushPaymentString:">-generatePushPaymentString:</a>
@@ -348,31 +191,30 @@
                       <div class="abstract">
                         <p>Generate the push payment string with new CRC checksum.
 The existing CRC field will be replaced by the new CRC checksum.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The string is generated with ordered tags, it&rsquo;s not following the original order. This method is <strong>mutating</strong> i.e it will mutate the CRC tag.</p>
 
-<ul>
-<li>The string is generated with ordered tags, it&rsquo;s not following the original order.</li>
-<li>This method is <strong>mutating</strong> i.e it will mutate the CRC tag</li>
-</ul>
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">generatePushPaymentString</span><span class="p">:</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">generatePushPaymentString</span><span class="p">:</span>
     <span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">generatePushPaymentString</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">generatePushPaymentString</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>Generated string with CRC.
-@note</p>
+                        <p>Generated string with CRC.</p>
                       </div>
                     </section>
                   </div>
@@ -393,36 +235,91 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <p>Get value with luhn checksum appended with the string representation of underlying value related to the tag.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    This is usually used for merchant id fields
+    <p>This is usually used for merchant id fields</p>
 
 </div>
-<div class="aside aside-throws">
-    <p class="aside-title">Throws</p>
-    <code>MPQRError.invalidFormat</code> exception
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Throws: <code>MPQRError.invalidFormat</code> exception</p>
 
 </div>
-<li>If the value doesn&rsquo;t exist for the tag</li>
-<li>If the format of the underlying value is not valid for generating the checksum</li>
+<li><p>If the value doesn&rsquo;t exist for the tag</p></li>
+<li><p>If the format of the underlying value is not valid for generating the checksum</p></li>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">valueWithLuhnChecksum</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tag</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">valueWithLuhnChecksum</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tag</span>
                                        <span class="nf">error</span><span class="p">:</span>
                                            <span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">valueWithLuhnChecksum</span><span class="p">(</span><span class="n">_</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">valueWithLuhnChecksum</span><span class="p">(</span><span class="n">_</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tag info for which to generate value with luhn checksum</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Value with luhn checksum appended</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PushPaymentData(im)isDynamic"></a>
+                    <a name="//apple_ref/objc/Method/-isDynamic" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)isDynamic">-isDynamic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if this data represents is dynamic</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isDynamic</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isDynamic</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>Value with luhn checksum appended</p>
+                        <p><code>true</code> if dynamic, <code>false</code> otherwise</p>
                       </div>
                     </section>
                   </div>
@@ -447,12 +344,12 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">payloadFormatIndicator</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">payloadFormatIndicator</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">payloadFormatIndicator</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">payloadFormatIndicator</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -479,13 +376,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">pointOfInitiationMethod</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">pointOfInitiationMethod</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">pointOfInitiationMethod</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -512,13 +409,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierVisa02</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierVisa02</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierVisa02</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -545,13 +442,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierVisa03</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierVisa03</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierVisa03</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -578,13 +475,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierMastercard04</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierMastercard04</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierMastercard04</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -611,13 +508,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierMastercard05</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierMastercard05</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierMastercard05</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -637,20 +534,20 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Merchant identifier NPCI with tag <code>06</code></p>
+                        <p>Merchant identifier tag 06 is reserved by EMVCo. For Bharat QR standard in India, this tag is currently defined by NCPI</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierNPCI06</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierNPCI06</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierNPCI06</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -670,20 +567,20 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Merchant identifier NPCI with tag <code>07</code></p>
+                        <p>Merchant identifier with tag 07 is reserved by EMVCo. For Bharat QR standard in India, this tag is currently defined by NPCI</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierNPCI07</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierNPCI07</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierNPCI07</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -703,20 +600,20 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Merchant identifier (EMVCo)IFSCCode</p>
+                        <p>Merchant identifier with tag 08 is reserved by EMVCo</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierIFSCCODE08</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierIFSCCODE08</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierIFSCCODE08</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -743,13 +640,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierDISCOVER09</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierDISCOVER09</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierDISCOVER09</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -776,13 +673,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierDISCOVER10</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierDISCOVER10</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierDISCOVER10</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -809,13 +706,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierAMEX11</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierAMEX11</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierAMEX11</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -842,13 +739,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierAMEX12</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierAMEX12</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierAMEX12</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -875,13 +772,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierJCB13</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierJCB13</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierJCB13</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -908,13 +805,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierJCB14</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierJCB14</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierJCB14</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -941,13 +838,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierUNIONPAY15</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierUNIONPAY15</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierUNIONPAY15</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -974,13 +871,13 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantIdentifierUNIONPAY16</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantIdentifierUNIONPAY16</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantIdentifierUNIONPAY16</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1000,21 +897,21 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get MAIT Data for some tag</p>
+                        <p>Get MAIData for some tag</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">getMAIDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">getMAIDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
                                        <span class="nf">error</span><span class="p">:</span>
                                            <span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getMAIData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getMAIData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1064,14 +961,14 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setMAIDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setMAIDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
                           <span class="nf">data</span><span class="p">:(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">data</span>
                          <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setMAIDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setMAIDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1122,19 +1019,19 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Merchant category code</p>
+                        <p>Merchant Category Code: MCC as defined by ISO 18245</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantCategoryCode</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantCategoryCode</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantCategoryCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantCategoryCode</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1154,20 +1051,20 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transaction currency code</p>
+                        <p>Transaction Currency Code: As defined by ISO 4217</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">transactionCurrencyCode</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">transactionCurrencyCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">transactionCurrencyCode</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1189,17 +1086,25 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                       <div class="abstract">
                         <p>Transaction amount</p>
 
+<p>This amount is expressed as how the value appears.</p>
+
+<p>Defines the regex to validate amount with max length 13 chars with following rules
+    - amount “100.00” is defined as “100.00”, or
+    - amount “99.85” is defined as “99.85”, or
+    - amount “99.333” is defined as “99.333”, or
+    - amount “99.3456” is defined as “99.3456”</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">transactionAmount</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">transactionAmount</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">transactionAmount</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">transactionAmount</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1219,20 +1124,23 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Tip or convenience indicator</p>
+                        <p>Tip or convenience indicator
+    - 01 : Indicates Consumer should be prompted to enter tip
+    - 02 : Indicates that merchant would mandatorily charge a flat convenience fee
+    - 03 : Indicates that merchant would charge a percentage convenience fee</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">tipOrConvenienceIndicator</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">tipOrConvenienceIndicator</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">tipOrConvenienceIndicator</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1252,20 +1160,28 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Value of convenience fee fixed</p>
+                        <p>Value of convenience fee fixed.</p>
+
+<p>The convenience fee of a fixed amount should be specified here. This amount is expressed as how the value appears.</p>
+
+<p>Defines the regex to validate amount with max length 13 chars with following rules
+    - amount “100.00” is defined as “100.00”, or
+    - amount “99.85” is defined as “99.85”, or
+    - amount “99.333” is defined as “99.333”
+    - amount “99.3456” is defined as “99.3456”</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">valueOfConvenienceFeeFixed</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">valueOfConvenienceFeeFixed</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">valueOfConvenienceFeeFixed</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1285,20 +1201,22 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Value of convenience fee percentage</p>
+                        <p>Value of convenience fee percentage.</p>
+
+<p>The Convenience Fee Percentage is specified as whole integers between 00.01 (for 00.01%) to 99.99 (99.99%). E.g. 11.95</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">valueOfConvenienceFeePercentage</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">valueOfConvenienceFeePercentage</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">valueOfConvenienceFeePercentage</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1318,19 +1236,19 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Country code</p>
+                        <p>Country Code: As defined by ISO 3166.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">countryCode</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">countryCode</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">countryCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">countryCode</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1350,19 +1268,19 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Merchant name</p>
+                        <p>&ldquo;Merchant Name: Should always be the “doing business as” name for the merchant.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantName</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantName</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantName</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1389,12 +1307,12 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantCity</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">merchantCity</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">merchantCity</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">merchantCity</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1414,19 +1332,19 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Postal code</p>
+                        <p>Postal code: Zip code or Pin code or Postal code of merchant</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">postalCode</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">postalCode</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">postalCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">postalCode</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1446,19 +1364,19 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Additional data</p>
+                        <p>Additional Data Field: Additional information beyond basic may be required in certain cases. This information may be either presented by the merchant or acquirer or the Consumer may be prompted for entry on the app. For consumer prompt, the value field of Tag would be 3 asterisks i.e. ***. The acquirer / merchant should provide only minimum information in order to avoid making the size of data onerous. The length of each tag is variable up to 26 characters and overall it is not to exceed the maximum of 99 characters for the total size of the Additional Data Field.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">AdditionalData</span> <span class="o">*</span><span class="n">additionalData</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/AdditionalData.html">AdditionalData</a></span> <span class="o">*</span><span class="n">additionalData</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">additionalData</span><span class="p">:</span> <span class="kt">AdditionalData</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">additionalData</span><span class="p">:</span> <span class="nf">AdditionalData</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1478,19 +1396,25 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Language Data</p>
+                        <p>Language data, It will have:</p>
+
+<ul>
+<li>mandatory tag 00,</li>
+<li>mandatory Merchant Name tag 01,</li>
+<li>optional Merchant City tag 02.</li>
+</ul>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/LanguageData.html">LanguageData</a></span> <span class="o">*</span><span class="n">languageData</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/LanguageData.html">LanguageData</a></span> <span class="o">*</span><span class="n">languageData</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">languageData</span><span class="p">:</span> <span class="kt"><a href="../Classes/LanguageData.html">LanguageData</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">languageData</span><span class="p">:</span> <span class="nf">LanguageData</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1510,19 +1434,19 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>CRC</p>
+                        <p>CRC calculated to ISO/IEC 3309 compliant 16 bit CRC which includes all the preceding TLV objects till the Tag and length value of CRC i.e. A904. CRC would be the last TLV object.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">crc</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">atomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">crc</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">crc</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">crc</span><span class="p">:</span> <span class="nf">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -1549,14 +1473,14 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
 <span class="nf">getUnreservedDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
                         <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getUnreservedData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getUnreservedData</span><span class="p">(</span><span class="n">forTagString</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1606,14 +1530,14 @@ The existing CRC field will be replaced by the new CRC checksum.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setUnreservedDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setUnreservedDataForTagString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">tagString</span>
                                  <span class="nf">data</span><span class="p">:(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">data</span>
                                 <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setUnreservedDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setUnreservedDataForTagString</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1677,13 +1601,13 @@ For example,  first call of this function will assign data to tag 26. Second cal
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicMAIDTag</span><span class="p">:(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicMAIDTag</span><span class="p">:(</span><span class="n"><a href="../Classes/MAIData.html">MAIData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
                     <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDynamicMAIDTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setDynamicMAIDTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes/MAIData.html">MAIData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1735,13 +1659,13 @@ For example,  first call of this function will assign data to tag 80. Second cal
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicUnrestrictedTag</span><span class="p">:(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">setDynamicUnrestrictedTag</span><span class="p">:(</span><span class="n"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">value</span>
                             <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDynamicUnrestrictedTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setDynamicUnrestrictedTag</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Classes/UnrestrictedData.html">UnrestrictedData</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -1767,6 +1691,147 @@ For example,  first call of this function will assign data to tag 80. Second cal
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PushPaymentData(im)validateMerchantIdentifiers:"></a>
+                    <a name="//apple_ref/objc/Method/-validateMerchantIdentifiers:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)validateMerchantIdentifiers:">-validateMerchantIdentifiers:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validate merchant fields</p>
+
+<p>Atleast <code>1</code> field related to merchant identifiers should exist.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Throws: <code>MPQRError.missingTag</code> exception if the none of the merchant tags is found
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validateMerchantIdentifiers</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validateMerchantIdentifiers</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PushPaymentData(im)validateTipFields:"></a>
+                    <a name="//apple_ref/objc/Method/-validateTipFields:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)validateTipFields:">-validateTipFields:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validate tip fields</p>
+
+<p>Logic for validation is as following:</p>
+
+<ol>
+<li><p>If the <code>tipIndicator</code> tag <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_55_TIP_INDICATOR">PPTag.TAG_55_TIP_INDICATOR</a></code> does not exist then tip fields are <em>valid</em></p></li>
+<li><p>If the <code>tipIndicator</code> is <code><a href="../Enums/TipConvenienceIndicator.html#/c:@E@TipConvenienceIndicator@promptedToEnterTip">TipConvenienceIndicator.promptedToEnterTip</a></code> then it</p></li>
+<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_56_CONVENIENCE_FEE_FIXED">PPTag.TAG_56_CONVENIENCE_FEE_FIXED</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
+<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_57_CONVENIENCE_FEE_PERCENTAGE">PPTag.TAG_57_CONVENIENCE_FEE_PERCENTAGE</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
+<li><p>If the <code>tipIndicator</code> is <code><a href="../Enums/TipConvenienceIndicator.html#/c:@E@TipConvenienceIndicator@flatConvenienceFee">TipConvenienceIndicator.flatConvenienceFee</a></code> then it</p></li>
+<li><p><strong>MUST</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_56_CONVENIENCE_FEE_FIXED">PPTag.TAG_56_CONVENIENCE_FEE_FIXED</a></code> else it throws <code>MPQRError.missingTag</code></p></li>
+<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_57_CONVENIENCE_FEE_PERCENTAGE">PPTag.TAG_57_CONVENIENCE_FEE_PERCENTAGE</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
+<li><p>If the <code>tipIndicator</code> is <code><a href="../Enums/TipConvenienceIndicator.html#/c:@E@TipConvenienceIndicator@percentageConvenienceFee">TipConvenienceIndicator.percentageConvenienceFee</a></code> then it</p></li>
+<li><p><strong>MUST</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_57_CONVENIENCE_FEE_PERCENTAGE">PPTag.TAG_57_CONVENIENCE_FEE_PERCENTAGE</a></code> else it throws <code>MPQRError.missingTag</code></p></li>
+<li><p>Must <strong>NOT</strong> have <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_56_CONVENIENCE_FEE_FIXED">PPTag.TAG_56_CONVENIENCE_FEE_FIXED</a></code> else it throws <code>MPQRError.conflictingTag</code></p></li>
+<li><p>Else tip fields are valid</p></li>
+</ol>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Throws:
+
+</div>
+<li><code>MPQRError.conflictingTag</code> exception if the tags are conflicting.</li>
+<li><code>MPQRError.missingTag</code> exception if the required tag is missing.</li>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validateTipFields</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validateTipFields</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PushPaymentData(im)validatePriceField:"></a>
+                    <a name="//apple_ref/objc/Method/-validatePriceField:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PushPaymentData(im)validatePriceField:">-validatePriceField:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validate price fields</p>
+
+<p>Logic for validation is as following:</p>
+
+<ol>
+<li><p>If <code><a href="../Classes/PushPaymentData.html#/c:objc(cs)PushPaymentData(py)transactionAmount">transactionAmount</a></code> is <strong>not</strong> present and <code>isDynamic</code> returns true then tag <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_54_TRANSACTION_AMOUNT">PPTag.TAG_54_TRANSACTION_AMOUNT</a></code> is missing and it throws <code>MPQRError.missingTag</code> exception</p></li>
+<li><p>If <code><a href="../Classes/PushPaymentData.html#/c:objc(cs)PushPaymentData(py)transactionAmount">transactionAmount</a></code> <strong>is</strong> present and <code>isDynamic</code> returns false then tag <code><a href="../Classes/PPTag.html#/c:objc(cs)PPTag(cpy)TAG_54_TRANSACTION_AMOUNT">PPTag.TAG_54_TRANSACTION_AMOUNT</a></code> is conflicting and it throws <code>MPQRError.conflictingTag</code> exception</p></li>
+<li><p>Else price fields are valid</p></li>
+</ol>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Throws:
+
+</div>
+<li><code>MPQRError.conflictingTag</code> exception if the tags are conflicting.</li>
+<li><code>MPQRError.missingTag</code> exception if the required tag is missing.</li>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">validatePriceField</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validatePriceField</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -1775,8 +1840,8 @@ For example,  first call of this function will assign data to tag 80. Second cal
       </article>
     </div>
     <section class="footer">
-      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.4)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.5)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
