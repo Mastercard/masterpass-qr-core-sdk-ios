@@ -48,7 +48,7 @@ The code documentation can be found on Github link [here][3].
 - Follow same instructions as Swift
 
 [1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
-[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.5/masterpassqrcoresdk-framework-ios.zip
+[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.6/masterpassqrcoresdk-framework-ios.zip
 [3]: https://mastercard.github.io/masterpass-qr-core-sdk-ios
 
 ### Usage
