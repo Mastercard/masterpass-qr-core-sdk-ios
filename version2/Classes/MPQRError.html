@@ -130,6 +130,9 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@MPQRErrorMessageKey">MPQRErrorMessageKey</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MPQRErrorRootTagInfoKey">MPQRErrorRootTagInfoKey</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@MPQRErrorTagInfoKey">MPQRErrorTagInfoKey</a>
               </li>
               <li class="nav-group-task">
@@ -238,6 +241,43 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="n">withType</span> <span class="nv">type</span><span class="p">:</span> <span class="n">__MPQRErrorCode</span><span class="p">,</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">?,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">]?,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Any</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MPQRError(cm)errorWithType:str:tag:tags:value:rootTag:"></a>
+                    <a name="//apple_ref/objc/Method/+errorWithType:str:tag:tags:value:rootTag:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MPQRError(cm)errorWithType:str:tag:tags:value:rootTag:">+errorWithType:str:tag:tags:value:rootTag:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Static method that return a MPQR Object given error type, message or description, tag(s), and tag value, and RootTag.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">id</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">errorWithType</span><span class="p">:(</span><span class="n"><a href="../Enums/MPQRErrorCode.html">MPQRErrorCode</a></span><span class="p">)</span><span class="nv">type</span>
+                         <span class="nf">str</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">str</span>
+                         <span class="nf">tag</span><span class="p">:(</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">tag</span>
+                        <span class="nf">tags</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/TagInfo.html">TagInfo</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">tags</span>
+                       <span class="nf">value</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">value</span>
+                     <span class="nf">rootTag</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">rootTag</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="n">withType</span> <span class="nv">type</span><span class="p">:</span> <span class="n">__MPQRErrorCode</span><span class="p">,</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">?,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/TagInfo.html">TagInfo</a></span><span class="p">]?,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">rootTag</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Any</span></code></pre>
 
                         </div>
                       </div>
@@ -372,6 +412,38 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MPQRError(im)getRootTag"></a>
+                    <a name="//apple_ref/objc/Method/-getRootTag" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MPQRError(im)getRootTag">-getRootTag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Return string root-tag of the error.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="n">getRootTag</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRootTag</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -380,7 +452,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.5)</p>
+      <p>Copyright 2017 MasterCard. All rights reserved. Version (2.0.6)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
