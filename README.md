@@ -1,10 +1,10 @@
-# Masterpass QR Core SDK
+# MP QR Core SDK
 
 This SDK provides parser for parsing Push Payment QR code.
 
 You can use this SDK to generate Push Payment QR code string also by filling the data and using `PushPaymentData.generatePushPaymentString()`. See documentation for more information.
 
-_This sdk only deals with actual QR code strings. So you need to use a separate QR scanning SDK to get QR code strings. You can use [Masterpass QR Scan SDK][1]_
+_This sdk only deals with actual QR code strings. So you need to use a separate QR scanning SDK to get QR code strings. You can use [MP QR Scan SDK][1]_
 
 *This SDK is developed in Objective-C and it works with Swift.*
 
@@ -26,7 +26,7 @@ The code documentation can be found on Github link [here][3].
 
   ```
   use_frameworks!
-  pod 'MasterpassQRCoreSDK'
+  pod 'MPQRCoreSDK'
   ```
 
 - Do `pod install`
@@ -34,12 +34,12 @@ The code documentation can be found on Github link [here][3].
 
 #### Manual
 ##### Swift
-- Download the latest release of [Masterpass QR Core SDK][2].
+- Download the latest release of [MP QR Core SDK][2].
 - Unzip the file.
-- Go to your Xcode project’s target “General” settings. Drag MasterpassQRCoreSDK.framework to the “Embedded Binaries” section. Make sure to select **Copy items if needed** and click Finish.
+- Go to your Xcode project’s target “General” settings. Drag MPQRCoreSDK.framework to the “Embedded Binaries” section. Make sure to select **Copy items if needed** and click Finish.
 - Create a new **Run Script Phase** in your app’s target’s **Build Phases** and paste the following snippet in the script text field:
 
-	`bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/MasterpassQRCoreSDK.framework/strip-frameworks.sh"`
+	`bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/MPQRCoreSDK.framework/strip-frameworks.sh"`
 
   This step is required to work around an App Store submission bug when archiving universal binaries.
 
@@ -47,8 +47,8 @@ The code documentation can be found on Github link [here][3].
 ##### Objective-C
 - Follow same instructions as Swift
 
-[1]: https://www.github.com/Mastercard/masterpass-qr-scan-sdk-ios
-[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.6/masterpassqrcoresdk-framework-ios.zip
+[1]: https://www.github.com/Mastercard/s-qr-scan-sdk-ios
+[2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.7/MPQRCoreCdk-framework-ios.zip
 [3]: https://mastercard.github.io/masterpass-qr-core-sdk-ios
 
 ### Usage
@@ -58,7 +58,7 @@ The code documentation can be found on Github link [here][3].
 __Swift__
 
 ```swift
-import MasterpassQRCoreSDK
+import MPQRCoreSDK
 
 func parseQRCode(code: String) {
   do {
@@ -82,7 +82,7 @@ func parseQRCode(code: String) {
 __Objective-C__
 
 ```objc
-@import MasterpassQRCoreSDK;
+@import MPQRCoreSDK;
 
 - (void)parseQRCode:(NSString *)code {
     PushPaymentData *pushPaymentData;
