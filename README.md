@@ -1,10 +1,10 @@
-# MP QR Core SDK
+# MPQRCoreSDK
 
 This SDK provides parser for parsing Push Payment QR code.
 
 You can use this SDK to generate Push Payment QR code string also by filling the data and using `PushPaymentData.generatePushPaymentString()`. See documentation for more information.
 
-_This sdk only deals with actual QR code strings. So you need to use a separate QR scanning SDK to get QR code strings. You can use [MP QR Scan SDK][1]_
+_This sdk only deals with actual QR code strings. So you need to use a separate QR scanning SDK to get QR code strings. You can use [MPQRScanSDK][1]_
 
 *This SDK is developed in Objective-C and it works with Swift.*
 
@@ -34,7 +34,7 @@ The code documentation can be found on Github link [here][3].
 
 #### Manual
 ##### Swift
-- Download the latest release of [MP QR Core SDK][2].
+- Download the latest release of [MPQRCoreSDK][2].
 - Unzip the file.
 - Go to your Xcode project’s target “General” settings. Drag MPQRCoreSDK.framework to the “Embedded Binaries” section. Make sure to select **Copy items if needed** and click Finish.
 - Create a new **Run Script Phase** in your app’s target’s **Build Phases** and paste the following snippet in the script text field:
@@ -49,7 +49,7 @@ The code documentation can be found on Github link [here][3].
 
 [1]: https://www.github.com/Mastercard/s-qr-scan-sdk-ios
 [2]: https://www.github.com/Mastercard/masterpass-qr-core-sdk-ios/releases/download/2.0.7/MPQRCoreCdk-framework-ios.zip
-[3]: https://mastercard.github.io/masterpass-qr-core-sdk-ios
+[3]: https://mastercard.github.io/masterpass-qr-core-sdk-ios // Need to have New URL, as this has masterpass word
 
 ### Usage
 
@@ -494,3 +494,4 @@ __Objective-C__
     }
 }
 ```
+
