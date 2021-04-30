@@ -1,3 +1,6 @@
+For the latest version of the Mastercard QR SDK, please visit https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/device-sdks/ 
+
+---
 # MPQRCoreSDK
 
 This SDK provides parser for parsing Push Payment QR code.
